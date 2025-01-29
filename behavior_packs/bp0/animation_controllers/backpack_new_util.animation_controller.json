@@ -1,0 +1,76 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dropping": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"drop": "query.is_sneaking && query.is_jumping"
+						}
+					]
+				},
+				"drop": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/ride @e[type=bf:backpack_inventory,c=1,r=2] stop_riding",
+						"/event entity @p[r=2] normal"
+					]
+				}
+			}
+		},
+        "controller.animation.function": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/tag @s[tag=!old] add new"
+					]
+				}
+			}
+		},
+		"controller.animation.put": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"put": "query.skin_id == 1"
+						},
+						{
+							"open": "!query.is_riding && query.variant == 1"
+						}
+					]
+				},
+				"put": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/title @p actionbar §bsneak and jump to remove backpack",
+						"/ride @s start_riding @p teleport_rider",
+						"/event entity @p[r=2] music",
+						"@s putreset"
+					]
+				},
+				"open": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/title @p actionbar §bsneak and interact to wear backpack",
+						"@s remove_actionbar"
+					]
+				}
+			}
+		}
+	}
+}
