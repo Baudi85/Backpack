@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:red_projectile",
+			"materials": {
+				"default": "spider"
+			},
+			"geometry": {
+				"default": "geometry.projectile_red"
+			},
+			"animations": {
+				"util": "animation.projectile.util2"
+			},
+			"scripts": {
+				"animate": ["util"]
+			},
+			"textures": {
+				"default": "textures/entity/mob/projectile_reed"
+			},
+			"render_controllers": ["controller.render.default"],
+			"particle_effects": {
+				"shoot_prored": "bf:shoot_prored"
+			},
+			"spawn_egg": {
+				"base_color": "#32dc1c",
+				"overlay_color": "#244e02"
+			}
+		}
+	}
+}

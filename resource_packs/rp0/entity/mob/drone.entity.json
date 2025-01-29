@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "hf:drone",
+			"materials": {
+				"default": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/mob/drone"
+			},
+			"geometry": {
+				"default": "geometry.drone"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#dc6e1c",
+				"overlay_color": "#7c9394"
+			}
+		}
+	}
+}

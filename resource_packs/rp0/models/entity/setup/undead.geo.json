@@ -1,0 +1,69 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.undead_setup",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "setup",
+					"pivot": [0, 11, -3],
+					"rotation": [0, 180, 0],
+					"cubes": [
+						{"origin": [-6, 3, -6], "size": [12, 27, 6], "uv": [0, 0]},
+						{"origin": [-4, 30, -6], "size": [8, 6, 6], "uv": [56, 18]},
+						{"origin": [-9, 21, -3], "size": [18, 18, 0], "uv": [36, 0]}
+					]
+				},
+				{
+					"name": "part_2",
+					"parent": "setup",
+					"pivot": [5.01086, 16.5, -5.87584],
+					"cubes": [
+						{"origin": [5.01086, 3, -7.37584], "size": [6, 27, 1], "pivot": [8.01086, 16.5, -6.87584], "rotation": [0, 10, 0], "uv": [14, 33]}
+					]
+				},
+				{
+					"name": "part_1",
+					"parent": "setup",
+					"pivot": [-6.01086, 16.5, -5.87584],
+					"cubes": [
+						{"origin": [-11.01086, 3, -7.37584], "size": [6, 27, 1], "pivot": [-8.01086, 16.5, -6.87584], "rotation": [0, -10, 0], "uv": [0, 33]}
+					]
+				},
+				{
+					"name": "arm_1",
+					"parent": "setup",
+					"pivot": [-2.78806, 24, -5.30866],
+					"cubes": [
+						{"origin": [-5.81879, 21, -19.50418], "size": [0, 6, 5], "pivot": [-4.78806, 24, -13.30866], "rotation": [0, -2.5, 5], "uv": [0, 56]},
+						{"origin": [-5.25, 22, -15], "size": [0, 4, 11], "pivot": [-4.78806, 24, -13.30866], "rotation": [0, 20, 5], "uv": [28, 47]}
+					]
+				},
+				{
+					"name": "arm_2",
+					"parent": "setup",
+					"pivot": [2.78806, 14, -5.30866],
+					"cubes": [
+						{"origin": [5.25, 12, -15], "size": [0, 4, 11], "pivot": [4.78806, 14, -13.30866], "rotation": [0, -20, 17.5], "uv": [28, 47], "mirror": true},
+						{"origin": [5.81879, 11, -19.50418], "size": [0, 6, 5], "pivot": [4.78806, 14, -13.30866], "rotation": [0, 2.5, 17.5], "uv": [0, 56], "mirror": true}
+					]
+				},
+				{
+					"name": "light",
+					"parent": "setup",
+					"pivot": [5, 11, -7],
+					"cubes": [
+						{"origin": [-5, 4, -12], "size": [10, 25, 6], "uv": [30, 27]}
+					]
+				}
+			]
+		}
+	]
+}

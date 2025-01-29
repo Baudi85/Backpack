@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:spiral"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "   ",
+            "#EW",
+            " C "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:blaze_powder"
+            },
+            "E": {
+                "item": "minecraft:emerald"
+            },
+            "W": {
+                "item": "minecraft:water_bucket"
+            },
+            "C": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:spiral_item"
+        }
+    }
+}

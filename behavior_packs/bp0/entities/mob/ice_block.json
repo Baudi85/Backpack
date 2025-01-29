@@ -1,0 +1,107 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bf:ice_block",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn":{
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:timer": {
+				"time": 3.5,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?8:0"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:collision_box": {
+				"width": 0.01,
+				"height": 0.01
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 2,
+						"height": 4,
+						"pivot": [
+							0,
+							1,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 20
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 5
+			},
+			"minecraft:follow_range": {
+				"value": 40
+			},
+			"minecraft:behavior.float": {
+				"priority": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"despawn":{
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

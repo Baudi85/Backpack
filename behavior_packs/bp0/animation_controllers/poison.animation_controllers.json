@@ -1,0 +1,99 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.poison_blaster": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "on_entry": ["v.tick_delay = q.life_time;", "/tag @s add poison"],
+            "transitions": [
+              { "poison_blaster_shoot": "q.mark_variant == 14 && v.attack_time > 0.0f && (q.life_time - v.tick_delay) >= 0.75"}
+            ]
+          },
+          "poison_blaster_shoot": {
+            "on_entry": [
+              "@s poison_project",
+              "/playsound mob.shulker.shoot @p[r=10]",
+              "/playsound bubble.up @p[r=10]",
+              "/camerashake add @s 0.02",
+              "/tag @s add remove"
+            ],
+            "transitions": [ 
+              { "default": "q.all_animations_finished" }
+            ]
+          }
+        }
+      },
+      "controller.animation.structure_set_smoke_1_2":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "!q.mark_variant == 0"}]
+            },
+            "set":{
+                "on_entry": [ "/particle bf:particle3 ~~2~", "/effect @e[r=25,tag=!poison] poison 5 9"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+      },
+      "controller.animation.structure_set_smoke_1_3":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "!q.mark_variant == 0"}]
+            },
+            "set":{
+                "on_entry": [ "/particle bf:colour ~~2~", "/effect @e[r=25,tag=!poison] blindness 5 9", "/playsound random.explode @p[r=30]"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+      },
+      "controller.animation.structure_set_smoke_1_22":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "!q.mark_variant == 0"}]
+            },
+            "set":{
+                "on_entry": [ "/particle bf:red_splat ~~2~", "/effect @e[r=25,tag=!poison] weakness 3 6"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+      },
+      "controller.animation.structure_set_smoke_1_23":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "q.mark_variant == 2"}]
+            },
+            "set":{
+                "on_entry": ["/title @s actionbar - §b! using ice attack ! §r-","/summon bf:ice_block", "/camerashake add @p[r=15] 0.075 1.1 positional", "/effect @e[r=25,tag=!icee] slowness 3 6"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+      },
+      "controller.animation.fire_cheat":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "q.mark_variant == 1"}]
+            },
+            "set":{
+                "on_entry": ["/camerashake add @p[r=15] 0.075 1.1 positional", "/structure load fire ~~~ 0_degrees"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+      },
+      "controller.animation.drop":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "!q.is_alive"}]
+            },
+            "set":{
+                "on_entry": ["/loot spawn ~~~ loot backpack_entity"]
+            }
+        }
+      }
+    }
+  }

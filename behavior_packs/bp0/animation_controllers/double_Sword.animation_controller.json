@@ -1,0 +1,118 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.double_sword2":{
+        "initial_state": "default",
+        "states": {
+          "default":{
+            "transitions": [
+              { "if": "q.mark_variant != 15" }
+            ]
+          },
+          "if":{
+            "on_entry": ["@s normal_v"],
+            "transitions": [
+              {"default": "query.mark_variant == 15"}
+            ]
+          }
+        }
+      },
+      "controller.animation.double_sword": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              { "say": "q.mark_variant == 15" }
+            ],
+            "on_entry": ["@s normal", "/effect @s clear", "/tag @s remove icee", "@s normal_v"]
+          },
+          "say": {
+            "transitions": [
+              { "holding": "q.mark_variant == 15" }
+            ],
+            "on_entry": [
+              "/title @s actionbar - Sneak to change to §6Fire§f -"
+            ]
+          },
+  
+          "ender_transition2":{
+            "transitions": [
+              {
+                "ender_transition": "(q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking"
+              }
+            ]
+          },
+          "holding": {
+            "transitions": [ 
+              { "default": "q.mark_variant != 15" },
+              { "ender_transition2": "q.mark_variant == 15 && (q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking" },
+              { "attack.earth": "q.mark_variant == 15 && v.attack_time > 0.0f" }
+            ],
+            "on_entry": [
+              "v.tick_delay = q.life_time;",
+              "/camerashake add @s 0.075 0.1 rotational",
+              "/tag @s add icee",
+              "/title @s actionbar - §4Fire Element§f -",
+              "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.65 0.0002",
+              "/effect @s strength 99999 50 true",
+              "/effect @s fire_resistance 0 0 true",
+              "/effect @s night_vision 0 0 true"
+             ],
+             "on_exit": [
+               "/camerashake add @s 0.075 0.1 rotational",
+               "/effect @s strength 0 0 true"
+              ]
+          },
+          "attack.earth":{
+            "animations": ["firee"],
+            "transitions": [
+              { "default": "q.mark_variant != 15" },
+              { "holding": "q.mark_variant == 15 && q.all_animations_finished" }
+            ]
+          },
+          "attack.fire":{
+            "on_entry": ["@s fireball_pounch"],
+            "transitions": [
+              { "default": "q.mark_variant != 15" },
+              { "holding": "q.mark_variant == 15 && q.all_animations_finished" }
+            ]
+          },
+
+          "ender_transition": {
+            "transitions": [ 
+              { "default": "q.mark_variant != 15" },
+              { "attack.thunder": "q.mark_variant == 15 && v.attack_time > 0.0f" },
+              { "holding": "q.mark_variant == 15 && (q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking" }
+            ],
+            "on_entry": [
+              "/effect @s fire_resistance 255 25 true",
+              "/effect @s night_vision 255 25 true",
+              "/effect @s strength 0 0 true",
+              "/tag @s add icee",
+              "/title @s actionbar - §bIce Element§f -",
+              "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.65 0.0002",
+              "v.tick_delay = q.life_time;"
+             ]
+          },
+          "attack.thunder":{
+            "animations": ["icee"],
+            "transitions": [
+              { "default": "q.mark_variant != 15" },
+              { "ender_transition": "q.mark_variant == 15 && q.all_animations_finished" }
+            ]
+          },
+          //Fire
+          "holding_transition": {
+            "transitions": [ 
+              { "default": "q.mark_variant != 15" },
+              { "holding": "q.mark_variant == 15" } 
+            ],
+            "on_entry": [
+              "/title @s clear",
+              "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.25 0.0002"
+             ]
+          }
+        }
+      }
+    }
+  }

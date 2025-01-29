@@ -1,0 +1,336 @@
+{
+    "format_version": "1.14.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "bf:backpack_pillar",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "normal":{
+                "minecraft:mark_variant": {
+                  "value": 0
+                }
+              },
+              "jetpack_backpack":{
+                "minecraft:mark_variant": {
+                  "value": 1
+                }
+              },
+              "mechanical_tentacle":{
+                "minecraft:mark_variant": {
+                  "value": 2
+                }
+              },
+              "wings":{
+                "minecraft:mark_variant": {
+                  "value": 3
+                }
+              },
+              "undead":{
+                "minecraft:mark_variant": {
+                  "value": 4
+                }
+              },
+              "drone_backpack":{
+                "minecraft:mark_variant": {
+                  "value": 5
+                }
+              },
+              "scifi_tentacle":{
+                "minecraft:mark_variant": {
+                  "value": 6
+                }
+              },
+              "spiral":{
+                "minecraft:mark_variant": {
+                  "value": 7
+                }
+              },
+              "dragon":{
+                "minecraft:mark_variant": {
+                  "value": 8
+                }
+              },
+              "underwater":{
+                "minecraft:mark_variant": {
+                  "value": 9
+                }
+              },
+              "fire_work":{
+                "minecraft:mark_variant": {
+                  "value": 10
+                }
+              },
+              "magic_backpack":{
+                "minecraft:mark_variant": {
+                  "value": 11
+                }
+              },
+              "music":{
+                "minecraft:mark_variant": {
+                  "value": 12
+                }
+              },
+              "turtle":{
+                "minecraft:mark_variant": {
+                  "value": 100
+                }
+              },
+              "poison_blaster":{
+                "minecraft:mark_variant": {
+                  "value": 14
+                }
+              },
+              "double_sword":{
+                "minecraft:mark_variant": {
+                  "value": 15
+                }
+              }
+        },
+        "components": {
+          "minecraft:interact": {
+            "interactions": [
+              {
+                "on_interact": {
+                  "filters": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "other",
+                      "value": "minecraft:stick"
+                    }
+                  ],
+                  "target": "self",
+                  "event": "change_eventer"
+                }
+              }
+            ]
+          },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:type_family": {
+                "family": ["dummy"]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 999
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:nameable": {},
+            "minecraft:inventory": {
+              "additional_slots_per_strength": 0,
+              "can_be_siphoned_from": false,
+              "container_type": "horse",
+              "inventory_size": 1,
+              "private": false,
+              "restrict_to_owner": false
+            },
+            "minecraft:is_chested": {}
+        },
+        "events": {
+          "change_eventer":{
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "jetpack_backpack"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "mechanical_tentacle"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "wings"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "undead"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "drone_backpack"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "scifi_tentacle"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "spiral"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "dragon"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "underwater"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "fire_work"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "magic_backpack"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "music"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "turtle"
+                  ]
+                }
+              }
+            ]
+          },
+
+
+
+          //backpacks
+            "normal":{
+                "add": {
+                  "component_groups": [ "normal"]
+                }
+              },
+              "jetpack_backpack":{
+                "add": {
+                  "component_groups": [ "jetpack_backpack"]
+                }
+              },
+              "mechanical_tentacle":{
+                "add": {
+                  "component_groups": [ "mechanical_tentacle"]
+                }
+              },
+              "wings":{
+                "add": {
+                  "component_groups": [ "wings"]
+                }
+              },
+              "poison_blaster":{
+                "add": {
+                  "component_groups": [ "poison_blaster"]
+                }
+              },
+              "undead":{
+                "add": {
+                  "component_groups": [ "undead"]
+                }
+              },
+              "drone_backpack":{
+                "add": {
+                  "component_groups": [ "drone_backpack"]
+                }
+              },
+              "scifi_tentacle":{
+                "add": {
+                  "component_groups": [ "scifi_tentacle"]
+                }
+              },
+              "spiral":{
+                "add": {
+                  "component_groups": [ "spiral"]
+                }
+              },
+              "dragon":{
+                "add": {
+                  "component_groups": [ "dragon"]
+                }
+              },
+              "underwater":{
+                "add": {
+                  "component_groups": [ "underwater"]
+                }
+              },
+              "fire_work":{
+                "add": {
+                  "component_groups": [ "fire_work"]
+                }
+              },
+              "magic_backpack":{
+                "add": {
+                  "component_groups": [ "magic_backpack"]
+                }
+              },
+              "music":{
+                "add": {
+                  "component_groups": [ "music"]
+                }
+              },
+              "turtles":{
+                "add": {
+                  "component_groups": [ "turtle"]
+                }
+            },
+            "double_sword":{
+              "add": {
+                "component_groups": [ "double_sword"]
+              }
+          }
+        }
+    }
+}

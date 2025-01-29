@@ -1,0 +1,22 @@
+{
+    "resource_pack_name": "extra_mob_heads",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        // backpack item textures
+        "jetpack_backpack_item": { "textures": [ "textures/item/jetpack" ] },
+        "mechanical_tentacle": { "textures": [ "textures/item/mechanical_tentacle" ] },
+        "wings": { "textures": [ "textures/item/wings" ] },
+        "undead_item": { "textures": [ "textures/item/undead" ] },
+        "drone_backpack_item": { "textures": [ "textures/item/drone_backpack_item" ] },
+        "scifi_tentacle_item": { "textures": [ "textures/item/scifi_tentacle" ] },
+        "spiral_item": { "textures": [ "textures/item/spiral_item" ] },
+        "dragon_item": { "textures": [ "textures/item/dragon_item" ] },
+        "underwater_item": { "textures": [ "textures/item/underwater_item" ] },
+        "fire_work_item": { "textures": [ "textures/item/fire_work_item" ] },
+        "magic_backpack_item": { "textures": [ "textures/item/magic_backpack_item" ] },
+        "music_item": { "textures": [ "textures/item/music_item" ] },
+        "turtle_item": { "textures": [ "textures/item/turtle_item" ] },
+        "poison_blaster_item": { "textures": [ "textures/item/poison_blaster_item" ] },
+        "double_sword_item": { "textures": [ "textures/item/double_sword" ] }
+    }
+}

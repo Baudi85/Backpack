@@ -1,0 +1,211 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bf:robot",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"setup": "controller.animation.jump_npc",
+				"change_name": "controller.animation.change_name"
+			},
+			"scripts": {
+				"animate": ["setup", "change_name"]
+			}
+		},
+		"component_groups": {
+			"jump":{
+				"minecraft:timer": {
+					"time": 1.04,
+					"looping": true,
+					"time_down_event": {
+						"event": "no_jump",
+						"target": "self"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 100
+				}
+			},
+			"no_jump":{
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								],
+								"target": "self",
+								"event": "jump"
+							}
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.look_at_player": {
+				"priority": 0
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							],
+							"target": "self",
+							"event": "jump"
+						}
+					}
+				]
+			},
+			"minecraft:behavior.delayed_attack": {
+				"attack_duration": 1.55,
+				"hit_delay_pct": 0.56,
+				"melee_fov": 120,
+				"priority": 0,
+				"speed_multiplier": 1.5,
+				"track_target": true,
+				"reach_multiplier": 1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"reselect_targets": true,
+				"target_search_height": 1000,
+				"within_radius": 1000,
+				"must_see": false,
+				"entity_types": [
+					{
+						"filters": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "marker"
+							}
+						],
+						"max_dist": 1000
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 0,
+				"require_complete_path": true,
+				"track_target": true
+			},
+			"minecraft:follow_range": {
+				"value": 1000,
+				"max": 1000
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:npc": {
+				"npc_data": {
+					"portrait_offsets": {
+					 "translate": [-7, 50, 0],
+					 "scale": [1.50, 1.50, 1.50]
+					},
+					"picker_offsets": {
+					 "translate": [0, 20, 0],
+					 "scale": [1.7, 1.5, 1.7]
+					}
+				}
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": false,
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {
+				"always_show": true
+			},
+			"minecraft:type_family": {
+				"family": ["npc","robot_npc"]
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2
+			},
+			"minecraft:jump.static": {},
+			"minecraft:health": {
+				"value": 20
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 3
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"jump":{
+				"add": {
+					"component_groups": [
+						"jump"
+					]
+				}
+			},
+			"no_jump":{
+				"remove": {
+					"component_groups": [
+						"jump"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"no_jump"
+					]
+				}
+			}
+		}
+	}
+}

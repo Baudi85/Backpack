@@ -1,0 +1,93 @@
+{
+    "format_version": "1.18.20",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "hf:dont_come",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "despawn":{
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:behavior.move_towards_home_restriction": {
+              "priority": 9
+            },
+            "minecraft:leashable": {
+                "soft_distance": 4.0,
+                "hard_distance": 6.0,
+                "max_distance": 10.0
+            },
+            "minecraft:balloonable": {
+                "mass": 0.5
+            },
+            "minecraft:behavior.float": {
+                "priority": 19
+            },
+            "minecraft:type_family": {
+                "family": [ "dont_come"]
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 0.5
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+            },
+            "minecraft:game_event_movement_tracking": {
+                "emit_flap": true
+            },
+            "minecraft:follow_range": {
+                "value": 1024
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:health": {
+                "value": 10,
+                "max": 10
+            },
+            "minecraft:attack": {
+                "damage": 4
+            },
+            "minecraft:timer": {
+                "time": 20,
+                "looping": false,
+                "time_down_event": {
+                    "event": "despawn",
+                    "target": "self"
+                }
+            },
+            "minecraft:nameable": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+              }
+        },
+        "events": {
+            "despawn":{
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

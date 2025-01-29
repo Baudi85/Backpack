@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:icee_projectile",
+			"materials": {
+				"default": "spider"
+			},
+			"geometry": {
+				"default": "geometry.icee"
+			},
+			"textures": {
+				"default": "textures/entity/icee"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#1cdcd2",
+				"overlay_color": "#ccfaf4"
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:robo_cop",
+			"materials": {
+				"default": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"textures": {
+				"default": "textures/entity/mob/robot_2"
+			},
+			"geometry": {
+				"default": "geometry.robot_2"
+			},
+			"animations": {
+				"walk": "animation.robot_human.walk",
+				"idle": "animation.robot_human.idle",
+				"attack": "animation.robot_human.attack",
+
+				"setup": "controller.animation.mobs"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#cfcfcf",
+				"overlay_color": "#1ad6e0"
+			}
+		}
+	}
+}

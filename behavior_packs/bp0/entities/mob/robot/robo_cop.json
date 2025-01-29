@@ -1,0 +1,158 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bf:robo_cop",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"attack":{
+				"minecraft:attack": {
+					"damage": 8
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"must_see": true,
+					"must_reach": true,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"none_of": {
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "robo_cop"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "robot"
+										}
+									]
+								},
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"max_dist": 250
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.avoid_mob_type": {
+				"sprint_distance": 25,
+				"priority": 0,
+				"max_dist": 10,
+				"max_flee": 20,
+				"walk_speed_multiplier": 1,
+				"sprint_speed_multiplier": 1,
+				"probability_per_strength": 1,
+				"entity_types":[
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "dont_come"
+						}
+					}
+				],
+				"ignore_visibility": false,
+				"remove_target": true
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 2
+			},
+			"minecraft:behavior.delayed_attack": {
+				"attack_duration": 1.9,
+				"hit_delay_pct": 0.38,
+				"melee_fov": 120,
+				"priority": 1,
+				"speed_multiplier": 1.5,
+				"track_target": true,
+				"reach_multiplier": 2.34
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 3
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 4
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.2
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?5:0"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": ["monster","spectra", "robot"]
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2.4
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": false,
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:health": {
+				"value": 48
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 3
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 16
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": ["attack"]
+				}
+			}
+		}
+	}
+}

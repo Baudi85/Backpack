@@ -1,0 +1,65 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.first_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": false },
+        { "rightArm": "q.get_equipped_item_name(0, 1) == '' || q.get_equipped_item_name(0, 1) == 'map' || v.backpacks" },
+        { "rightSleeve": "q.get_equipped_item_name(0, 1) == '' || q.get_equipped_item_name(0, 1) == 'map' || v.backpacks" },
+        { "leftArm": "(q.get_equipped_item_name(0, 1) == 'map' && q.get_equipped_item_name('off_hand') != 'shield') || v.backpacks || (q.get_equipped_item_name('off_hand') == 'map' && !q.item_is_charged) || (!q.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))" },
+        { "leftSleeve": "(q.get_equipped_item_name(0, 1) == 'map' && q.get_equipped_item_name('off_hand') != 'shield') || (q.get_equipped_item_name('off_hand') == 'map' && !q.item_is_charged) || (!q.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))" }
+      ],
+      "is_hurt_color": {
+        "r": "q.mark_variant == 11 ? 0.5 + math.cos(q.anim_time * 360) * 0.3 : 1.0",
+        "g": "q.mark_variant == 11 ? 0.85 + math.cos(q.anim_time * 360) * 0.3",
+        "b": "q.mark_variant == 11 ? 1 + math.cos(q.anim_time * 360) * 0.3",
+        "a": "q.mark_variant == 11 ? math.cos(q.anim_time * 360) * 0.3 + 0.65 : 0.7"
+      }
+    },
+    "controller.render.player.third_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "helmet": "variable.helmet_layer_visible" },
+        { "leftLegging": "variable.leg_layer_visible" },
+        { "rightLegging": "variable.leg_layer_visible" },
+        { "leftBoot": "variable.boot_layer_visible" },
+        { "rightBoot": "variable.boot_layer_visible" },
+        { "leftSock": "variable.boot_layer_visible && variable.leg_layer_visible" },
+        { "rightSock": "variable.boot_layer_visible && variable.leg_layer_visible" },
+        { "bodyArmor": "variable.chest_layer_visible && !query.has_cape" },
+        { "leftArmArmor": "variable.chest_layer_visible && !query.has_cape" },
+        { "rightArmArmor": "variable.chest_layer_visible && !query.has_cape" },
+        { "belt": "variable.chest_layer_visible && variable.leg_layer_visible" }
+      ]
+    },
+    "controller.render.player.map": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": false },
+        { "head": true },
+        { "hat": true },
+        { "helmet": true }
+      ]
+    },
+    "controller.render.player_overlay": {
+      "geometry": "Geometry.custom",
+      "materials": [{"*":"Material.default"}],
+      "textures": ["Texture.default"],
+      "part_visibility": [
+        { "*": "v.backpacks" },
+        { "head": "variable.is_third_person" },
+        { "hat": "variable.is_third_person" },
+        { "body": "variable.is_third_person"  },
+        { "helmet": "variable.is_third_person" }
+      ]
+    }    
+  }
+}

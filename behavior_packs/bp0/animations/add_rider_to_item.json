@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.add_rider_to_item": {
+      "timeline": {
+        "0.0": [
+          "/execute @s[name=\"Music Backpack\"] ~~~ ride @s summon_rider bf:backpack_inventory",
+
+          "@s hf:remove_check_item_entity"
+        ]
+      },
+      "animation_length": 0.1,
+      "loop": true
+    }
+  }
+}

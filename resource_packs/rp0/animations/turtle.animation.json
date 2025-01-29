@@ -1,0 +1,176 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.turtlae.hold": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-54.77535, -36.81662, -22.93393]
+				},
+				"sword": {
+					"rotation": [0, 0, 20],
+					"position": [1, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-52.12711, 28.93057, 20.61737]
+				}
+			}
+		},
+		"animation.turtlae.hold2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.83333,
+			"anim_time_update": "q.anim_time + q.delta_time *2",
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [-54.77535, -36.81662, -22.93393],
+						"0.2083": {
+							"pre": [-99.77535, -36.81662, -22.93393],
+							"post": [-99.77535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [-99.77535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5833": {
+							"post": [-47.27535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [-54.77535, -36.81662, -22.93393]
+					}
+				},
+				"sword": {
+					"rotation": [0, 0, 20],
+					"position": [1, 0, 0]
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [-52.12711, 28.93057, 20.61737],
+						"0.2083": {
+							"pre": [-80.02128, 46.22475, 24.03059],
+							"post": [-80.02128, 46.22475, 24.03059],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [-80.02128, 46.22475, 24.03059],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5833": {
+							"post": [-38.97874, 43.21266, 18.41044],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [-52.12711, 28.93057, 20.61737]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5833": {
+							"pre": [10, 0, 0],
+							"post": [10, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.turtlae.fpp2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.83333,
+			"anim_time_update": "q.anim_time + q.delta_time *2",
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [-80, 0, 0],
+						"0.2083": {
+							"pre": [-99.77535, -36.81662, -22.93393],
+							"post": [-99.77535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [-99.77535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5833": {
+							"post": [-47.27535, -36.81662, -22.93393],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [-80, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, -8],
+						"0.8333": [0, 0, -8]
+					}
+				},
+				"sword": {
+					"rotation": [0, 0, 20],
+					"position": {
+						"0.0": [1, 0, 0],
+						"0.8333": [1, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [-91.23228, 56.7385, 11.57881],
+						"0.2083": {
+							"pre": [-142.84729, 56.25669, 7.96303],
+							"post": [-142.84729, 56.25669, 7.96303],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [-142.84729, 56.25669, 7.96303],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5833": {
+							"post": [-38.97874, 43.21266, 18.41044],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [-91.23228, 56.7385, 11.57881]
+					},
+					"position": {
+						"0.0": [-4, -4, -11],
+						"0.8333": [-4, -4, -11]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5833": {
+							"pre": [10, 0, 0],
+							"post": [10, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": [0, 0, 0]
+					}
+				},
+				"root": {
+					"rotation": {
+						"0.0": [0, -180, 0],
+						"0.8333": [0, -180, 0]
+					}
+				}
+			}
+		},
+		"animation.turtlae.fpp": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [0, -180, 0]
+				},
+				"rightArm": {
+					"rotation": [-80, 0, 0],
+					"position": [0, 0, -8]
+				},
+				"sword": {
+					"position": [1, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-91.23228, 56.7385, 11.57881],
+					"position": [-4, -4, -11]
+				}
+			}
+		}
+	}
+}

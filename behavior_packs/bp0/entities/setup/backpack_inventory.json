@@ -1,0 +1,291 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bf:backpack_inventory",
+      "is_summonable": true,
+      "is_spawnable": true,
+      "animations": {
+        "put": "controller.animation.put",
+        "function": "controller.animation.function",
+        "drop": "controller.animation.drop"
+      },
+      "scripts": {
+        "animate": [
+          "put",
+          "function",
+          "drop"
+        ]
+      }
+    },
+    "component_groups": {
+      "three": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "player"
+                },
+                "event": "two"
+              },
+              "deals_damage": false,
+              "cause": "entity_attack"
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "two": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "player"
+                },
+                "event": "one"
+              },
+              "deals_damage": false,
+              "cause": "entity_attack"
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "one": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "event": "break",
+                "filters": {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "player"
+                }
+              },
+              "deals_damage": false,
+              "cause": "entity_attack"
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "break": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "num_to_spawn": 1,
+              "spawn_item": "honeyfrost:backpack.void_spawn_egg",
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true
+            }
+          ]
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "instant_damage",
+              "duration": 1,
+              "amplifier": 5,
+              "visible": false
+            }
+          ]
+        }
+      },
+      "skin1": {
+        "minecraft:skin_id": {
+          "value": 1
+        },
+
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+          
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "skin0": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "actionbar": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "remove_action": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:entity_sensor": {
+          "sensor_range": 3,
+          "event": "actionbar",
+          "event_filters": {
+            "subject": "other",
+            "test": "is_family",
+            "value": "player"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {},
+      "minecraft:type_family": {
+        "family": [
+          "backpack"
+        ]
+      },
+      "minecraft:inventory": {
+        "inventory_size": 27,
+        "container_type": "inventory"
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 1,
+            "pivot": [
+              0,
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "subject": "other",
+                "test": "is_sneaking",
+                "value": true
+              },
+              "event": "put",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "three",
+            "remove_action"
+          ]
+        }
+      },
+      "two": {
+        "remove": {
+          "component_groups": [
+            "three"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "two"
+          ]
+        }
+      },
+      "one": {
+        "remove": {
+          "component_groups": [
+            "two"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "one"
+          ]
+        }
+      },
+      "break": {
+        "remove": {
+          "component_groups": [
+            "one"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "break"
+          ]
+        }
+      },
+      "put": {
+        "add": {
+          "component_groups": [
+            "skin1"
+          ]
+        }
+      },
+      "putreset": {
+        "remove": {
+          "component_groups": [
+            "skin1"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "skin0"
+          ]
+        }
+      },
+      "actionbar": {
+        "add": {
+          "component_groups": [
+            "actionbar"
+          ]
+        }
+      },
+      "remove_actionbar": {
+        "remove": {
+          "component_groups": [
+            "actionbar"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "remove_action"
+          ]
+        }
+      }
+    }
+  }
+}

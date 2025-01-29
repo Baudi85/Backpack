@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:mechanical_tentacle"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "# #",
+            "S/S",
+            " T "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:iron_sword"
+            },
+            "S": {
+                "item": "minecraft:string"
+            },
+            "/": {
+                "item": "minecraft:stick"
+            },
+            "T": {
+                "item": "minecraft:trapped_chest"
+            }
+        },
+        "result": {
+            "item": "mb:mechanical_tentacle_item"
+        }
+    }
+}

@@ -1,0 +1,168 @@
+{
+    "namespace": "backpack",
+
+    "button_image": {
+        "type": "image",
+        "size": [ "100%", "100%" ],
+        "$hover_state": false
+    },
+    "button_on@backpack.button_image": {
+        "texture": "$button_on"
+    },
+    "button_off@backpack.button_image": {
+        "texture": "$button_off"
+    },
+    "button_on_hover@backpack.button_on": {
+        "$hover_state": true,
+        "texture": "$button_on_hover"
+    },
+    "button_off_hover@backpack.button_off": {
+        "$hover_state": true,
+        "texture": "$button_off_hover"
+    },
+    "button@common.toggle": { // all the variables are asked in @common.toggle in file "ui_common.json"
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": [ 22, 21 ],
+        "offset": [ 101, -75 ],
+        "layer": 99,
+        "$button_on": "textures/ui/custom/switch_on",
+        "$button_off": "textures/ui/custom/switch_off",
+        "$button_on_hover": "textures/ui/custom/switch_on_hover",
+        "$button_off_hover": "textures/ui/custom/switch_off_hover",
+        "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+        "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+        "$focus_override_left": "FOCUS_OVERRIDE_STOP",
+        "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+        "$ignore_tts_enabled_bind": true,
+        "sound_name": "item.book.page_turn",
+        "$checked_control": "backpack.button_on",
+        "$unchecked_control": "backpack.button_off",
+        "$checked_hover_control": "backpack.button_on_hover",
+        "$unchecked_hover_control": "backpack.button_off_hover",
+        "$unchecked_locked_control": "common.empty_panel",
+        "$checked_locked_control": "common.empty_panel",
+        "$unchecked_locked_hover_control": "common.empty_panel",
+        "$checked_locked_hover_control": "common.empty_panel",
+        "$toggle_name": "switch_b"
+    },
+    "close_button@common.close_button": {
+        "size": [ 22, 21 ],
+        "layer": 99,
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "offset": [ 101, -97 ],
+        "controls": [ // all the controls are from the @common.close_button but i copied everything only to change the $close_button_texture
+          {
+            "default@common.close_button_panel": {
+              "$close_button_panel_size": ["100%", "100%"],
+              "$close_button_texture": "textures/ui/custom/cross",
+              "$button_alpha": "$default_button_alpha"
+            }
+          },
+          {
+            "hover@common.close_button_panel": {
+              "$close_button_panel_size": ["100%", "100%"],
+              "$close_button_texture": "textures/ui/custom/cross_hover"
+            }
+          },
+          {
+            "pressed@common.close_button_panel": {
+              "$close_button_panel_size": ["100%", "100%"],
+              "$close_button_texture": "textures/ui/custom/cross"
+            }
+          }
+        ]
+    },
+    "detail": {
+        "type": "image",
+        "texture": "$description", // value filled in the horse_screen.json file
+        "size": [224, 240],
+        "layer": 0
+    },
+
+    "craft": {
+        "type": "panel",
+        "layer": 1,
+        "controls": [
+          {
+            "background": {
+              "type": "image",
+              "texture": "textures/ui/custom/craft_tv",
+              "size": [224, 240],
+              "layer": 0,
+              "anchor_from": "center",
+              "anchor_to": "center"
+            }  
+          },
+          {
+            "craft": {
+              "type": "image",
+              "texture": "$craft", // value filled in the horse_screen.json file
+              "size": [54, 54],
+              "offset": [-3, -47],
+              "layer": 1,
+              "anchor_from": "center",
+              "anchor_to": "bottom_right"
+            }  
+          },
+          {
+            "icon": {
+              "type": "image",
+              "texture": "$icon", // value filled in the horse_screen.json file
+              "size": [16, 16],
+              "offset": [38, -67],
+              "layer": 1,
+              "anchor_from": "center",
+              "anchor_to": "bottom_left"
+            }  
+          }
+        ]
+    },
+
+
+
+
+
+    ///-------------------------------------------///
+    ///             ROOT                          ///
+    ///-------------------------------------------///
+
+    "main_panel": {
+        "type": "panel",
+        "offset": [ 0, 0],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "$description|default": "textures/ui/custom/item_detail/1", // not really necessary but usefull if you forget to give a value when calling @backpack.main_panel
+        "$craft|default": "textures/ui/custom/craft/1", // not really necessary but usefull if you forget to give a value when calling @backpack.main_panel
+        "$icon|default": "textures/ui/custom/icon/1", // not really necessary but usefull if you forget to give a value when calling @backpack.main_panel
+        "controls": [
+            { "close_button@backpack.close_button": { } },
+            {
+              "detail@backpack.detail": {
+                "bindings": [ // see last example of https://wiki.bedrock.dev/json-ui/json-ui-intro.html#conditional-rendering
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "switch_b",
+                    "source_property_name": "(not #toggle_state)", // #toggle_state is the binary value of the button "switch_b" (called in source_control_name)
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "craft@backpack.craft": {
+                "bindings": [
+                  {
+                    "binding_type": "view", 
+                    "source_control_name": "switch_b",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+        ]
+    }
+      
+}

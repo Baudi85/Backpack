@@ -1,0 +1,120 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.drone",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "drone",
+					"pivot": [0, 4, 0],
+					"cubes": [
+						{
+							"origin": [-2, 1.75, -3],
+							"size": [4, 2, 4],
+							"uv": {
+								"north": {"uv": [16, 62], "uv_size": [4, 2]},
+								"east": {"uv": [12, 62], "uv_size": [4, 2]},
+								"south": {"uv": [24, 62], "uv_size": [4, 2]},
+								"west": {"uv": [20, 62], "uv_size": [4, 2]},
+								"up": {"uv": [16, 58], "uv_size": [4, 4]},
+								"down": {"uv": [20, 62], "uv_size": [4, -4]}
+							}
+						},
+						{
+							"origin": [-4, 3.75, -3],
+							"size": [8, 2, 4],
+							"uv": {
+								"north": {"uv": [16, 56], "uv_size": [8, 2]},
+								"east": {"uv": [12, 56], "uv_size": [4, 2]},
+								"south": {"uv": [28, 56], "uv_size": [8, 2]},
+								"west": {"uv": [24, 56], "uv_size": [4, 2]},
+								"up": {"uv": [16, 52], "uv_size": [8, 4]},
+								"down": {"uv": [24, 56], "uv_size": [8, -4]}
+							}
+						},
+						{
+							"origin": [-7, 5.75, -4],
+							"size": [6, 0, 6],
+							"uv": {
+								"north": {"uv": [0, 64], "uv_size": [6, 0]},
+								"east": {"uv": [-6, 64], "uv_size": [6, 0]},
+								"south": {"uv": [12, 64], "uv_size": [6, 0]},
+								"west": {"uv": [6, 64], "uv_size": [6, 0]},
+								"up": {"uv": [0, 58], "uv_size": [6, 6]},
+								"down": {"uv": [6, 64], "uv_size": [6, -6]}
+							}
+						},
+						{
+							"origin": [1, 5.75, -4],
+							"size": [6, 0, 6],
+							"uv": {
+								"north": {"uv": [0, 64], "uv_size": [6, 0]},
+								"east": {"uv": [-6, 64], "uv_size": [6, 0]},
+								"south": {"uv": [12, 64], "uv_size": [6, 0]},
+								"west": {"uv": [6, 64], "uv_size": [6, 0]},
+								"up": {"uv": [0, 58], "uv_size": [6, 6]},
+								"down": {"uv": [6, 64], "uv_size": [6, -6]}
+							}
+						}
+					]
+				},
+				{
+					"name": "beam",
+					"parent": "drone",
+					"pivot": [0, 1.75, 1],
+					"cubes": [
+						{
+							"origin": [1, 1, -5],
+							"size": [1, 0, 6],
+							"pivot": [0, 1, -2],
+							"rotation": [12.5, 0, 0],
+							"uv": {
+								"north": {"uv": [0, 53], "uv_size": [1, 0]},
+								"east": {"uv": [-6, 53], "uv_size": [6, 0]},
+								"south": {"uv": [7, 53], "uv_size": [1, 0]},
+								"west": {"uv": [1, 53], "uv_size": [6, 0]},
+								"up": {"uv": [0, 47], "uv_size": [1, 6]},
+								"down": {"uv": [1, 53], "uv_size": [1, -6]}
+							}
+						},
+						{
+							"origin": [-2, 1, -5],
+							"size": [1, 0, 6],
+							"pivot": [0, 1, -2],
+							"rotation": [12.5, 0, 0],
+							"uv": {
+								"north": {"uv": [0, 53], "uv_size": [1, 0]},
+								"east": {"uv": [-6, 53], "uv_size": [6, 0]},
+								"south": {"uv": [7, 53], "uv_size": [1, 0]},
+								"west": {"uv": [1, 53], "uv_size": [6, 0]},
+								"up": {"uv": [0, 47], "uv_size": [1, 6]},
+								"down": {"uv": [1, 53], "uv_size": [1, -6]}
+							}
+						}
+					]
+				},
+				{
+					"name": "laser",
+					"parent": "drone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-5.25, 2.5, -12.75],
+							"size": [10.5, 0, 13],
+							"uv": {
+								"down": {"uv": [43, 41], "uv_size": [21, -22]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

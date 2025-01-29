@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:big_robot",
+			"materials": {
+				"default": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"textures": {
+				"default": "textures/entity/mob/big_robot"
+			},
+			"geometry": {
+				"default": "geometry.big_robot"
+			},
+			"animations": {
+				"walk": "animation.big_robot.walk",
+				"idle": "animation.big_robot.idle",
+				"attack": "animation.big_robot.new",
+
+				"setup": "controller.animation.mobs3"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"particle_effects": {
+				"shootred": "bf:shootred"
+			},
+			"spawn_egg": {
+				"base_color": "#cfcfcf",
+				"overlay_color": "#1ad6e0"
+			}
+		}
+	}
+}

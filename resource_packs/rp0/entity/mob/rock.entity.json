@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:rock",
+			"materials": {
+				"default": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/mob/rock"
+			},
+			"geometry": {
+				"default": "geometry.rock"
+			},
+			"animations": {
+				"setup": "animation.rock.summon"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"particle_effects": {
+				"dust": "bf:dust"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#cc9b75",
+				"overlay_color": "#423524"
+			}
+		}
+	}
+}

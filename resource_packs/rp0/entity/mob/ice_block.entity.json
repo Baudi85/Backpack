@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:ice_block",
+			"materials": {
+				"default": "spider",
+				"spider": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/mob/blue_ice"
+			},
+			"geometry": {
+				"default": "geometry.ice_block"
+			},
+			"animations": {
+				"setup": "animation.ice_block.spawn"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": ["controller.render.ice"],
+			"spawn_egg": {
+				"base_color": "#64c6e4",
+				"overlay_color": "#423524"
+			}
+		}
+	}
+}

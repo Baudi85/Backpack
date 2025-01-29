@@ -1,0 +1,135 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jetpack": {
+            "initial_state": "jetpack.tpp",
+            "states": {
+                "jetpack.tpp":{
+                    "transitions": [
+                        {"jetpack.charged":"q.mark_variant == 1 && q.skin_id == 1"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "jetpack.charged":{
+                    "animations": ["jetpack_backpack_charged", "no_look"], 
+                    "transitions": [
+                        {"jetpack.tpp": "q.skin_id != 1"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+          "controller.animation.drone": {
+            "initial_state": "drone.tpp",
+            "states": {
+                "drone.tpp":{
+                    "transitions": [
+                        {"drone.charged":"q.mark_variant == 5 && q.skin_id == 2"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "drone.charged":{
+                    "animations": ["drone_deploy"], 
+                    "transitions": [
+                        {"drone.tpp": "q.all_animations_finished && q.skin_id != 2"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+          "controller.animation.dragon_backpack": {
+            "initial_state": "drone.tpp",
+            "states": {
+                "drone.tpp":{
+
+                    "transitions": [
+                        {"drone.charged":"q.mark_variant == 8 && v.attack_time > 0.0"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "drone.charged":{
+				    "animations": ["dragon.tpp_attack"], 
+                    "transitions": [
+                        {"drone.tpp": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+          "controller.animation.dragon": {
+            "initial_state": "dragon.tpp",
+            "states": {
+                "dragon.tpp":{
+                    "animations": ["dragon_idle"], 
+                    "transitions": [
+                        {"dragon.charged":"q.mark_variant == 8 && q.skin_id == 3"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "dragon.charged":{
+                    "transitions": [
+                        {"dragon.tpp": "q.all_animations_finished && q.skin_id != 3"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+          "controller.animation.fire_work": {
+            "initial_state": "fire_work.tpp",
+            "states": {
+                "fire_work.tpp":{
+                    "animations": ["fire_work.idle"], 
+                    "transitions": [
+                        {"fire_work.charged":"q.mark_variant == 10 && q.skin_id == 3"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "fire_work.charged":{
+                    "animations": ["fire_work.shoot"], 
+                    "transitions": [
+                        {"fire_work.tpp": "q.all_animations_finished && q.skin_id != 3"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+        "controller.animation.undead": {
+            "initial_state": "undead.tpp",
+            "states": {
+                "undead.tpp":{
+                    "animations": ["undead.idle"], 
+                    "transitions": [
+                        {"undead.attack":"q.is_baby"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "undead.attack":{
+                    "animations": ["undead.summon"], 
+                    "transitions": [
+                        {"undead.tpp": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          },
+        "controller.animation.wings": {
+            "initial_state": "wings.tpp",
+            "states": {
+                "wings.tpp":{
+                    "animations": ["wing_idle"], 
+                    "transitions": [
+                        {"wings.fly":"!q.is_on_ground && q.mark_variant == 3"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "wings.fly":{
+                    "animations": ["wings_flap", "wings_sound"], 
+                    "transitions": [
+                        {"wings.tpp": "q.is_on_ground"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+          }
+     }
+  }

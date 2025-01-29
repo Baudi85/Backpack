@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:turtle"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "   ",
+            "#T ",
+            " C "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:iron_sword"
+            },
+            "T": {
+                "item": "minecraft:turtle_helmet"
+            },
+            "C": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:turtle_item"
+        }
+    }
+}

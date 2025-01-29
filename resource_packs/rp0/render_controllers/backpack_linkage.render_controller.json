@@ -1,0 +1,303 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+		"controller.render.monster": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.default"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 10),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			}
+		},
+		//backpacks
+		"controller.render.jetpack_backpack": {
+			"geometry": "Geometry.jetpack_backpack",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.jetpack_backpack"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 10),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			}
+		},
+		"controller.render.fire_work": {
+			"geometry": "Geometry.fire_work",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.fire_work"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 10),6) / 6"],
+				"scale": [1.0,"1 / 6"]
+			}
+		},
+		"controller.render.underwater": {
+			"geometry": "Geometry.underwater",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.underwater"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 8),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			}
+		},
+		"controller.render.dragon_backpack": {
+			"geometry": "Geometry.dragon",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.dragon"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 4),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			}
+		},
+		"controller.render.music": {
+			"geometry": "Geometry.music",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.music"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 8),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			}
+		},
+		"controller.render.music2": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{"*": "Material.custom_animated"}
+			],
+			"textures": ["Texture.default"],
+			"uv_anim": {
+				"offset": [0.0,"math.mod(math.floor(query.life_time * 8),4) / 4"],
+				"scale": [1.0,"1 / 4"]
+			},
+			"is_hurt_color": {},
+			"on_fire_color": {}
+		},
+		"controller.render.mechanical_tentacle": {
+			"geometry": "Geometry.mechanical_tentacle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.mechanical_tentacle"]
+		},
+		"controller.render.wings": {
+			"geometry": "Geometry.wings",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.wings"]
+		},
+		"controller.render.turtles": {
+			"geometry": "Geometry.turtle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.turtle"]
+		},
+		"controller.render.undead": {
+			"geometry": "Geometry.undead",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"textures": ["Texture.undead"]
+		},
+		"controller.render.ice": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"textures": ["Texture.default"],
+			"is_hurt_color": {},
+			"on_fire_color": {}
+		},
+		"controller.render.droneBackpack": {
+			"geometry": "Geometry.droneBackpack",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.droneBackpack"]
+		},
+		"controller.render.scifi_tentacle": {
+			"geometry": "Geometry.scifi_tentacle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.scifi_tentacle"]
+		},
+
+		"controller.render.spirsal": {
+			"geometry": "Geometry.spiral",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.spiral"]
+		},
+
+		"controller.render.spiral_red": {
+			"geometry": "Geometry.red",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.red"]
+		},
+
+		"controller.render.double_sword_second": {
+			"geometry": "Geometry.double_sword_second",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.double_sword_second"]
+		},
+
+		"controller.render.spiral_purple": {
+			"geometry": "Geometry.purple",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.purple"]
+		},
+		"controller.render.spiral": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.spiral",
+						"Texture.red",
+						"Texture.purple"
+					]
+				}
+			},
+			"geometry": "geometry.spiral",
+			"part_visibility": [
+				{"*": true}
+			],
+			"materials": [
+				{"*": "material.default"}
+			],
+			"textures": ["array.skins[query.skin_id]"]
+		},
+
+
+
+		"controller.render.magic_backpack": {
+			"geometry": "Geometry.magic_backpack",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"textures": ["Texture.magic_backpack"]
+		},
+		"controller.render.poison_blaster": {
+			"geometry": "Geometry.poison_blaster",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"textures": ["Texture.poison_blaster"]
+		},
+		"controller.render.double_sword": {
+			"geometry": "Geometry.double_sword",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"textures": ["Texture.double_sword"]
+		},
+		"controller.render.double_swordsaaa": {
+			"geometry": "Geometry.double_swordsaaa",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"textures": ["Texture.double_sword"]
+		},
+		//first_person
+		"controller.render.poison_blaster.fpp": {
+			"geometry": "Geometry.poison_blaster",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"part_visibility": [
+				{"rightArm": true},
+				{"leftArm": true}
+			],
+			"textures": ["Texture.poison_blaster"]
+		},
+		"controller.render.turtle.fpp": {
+			"geometry": "Geometry.turtle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"part_visibility": [
+				{"rightArm": true},
+				{"leftArm": true}
+			],
+			"textures": ["Texture.turtle"]
+		},
+		"controller.render.spiral.fpp": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"part_visibility": [
+				{"rightArm": true},
+				{"leftArm": true},
+				{"head": false},
+				{"hat": false}
+			],
+			"textures": ["Texture.default"]
+		},
+		"controller.render.double_sword.fpp": {
+			"geometry": "Geometry.double_sword",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"part_visibility": [
+				{"rightArm": true},
+				{"leftArm": true},
+				{"head": false},
+				{"hat": false}
+			],
+			"textures": ["Texture.double_sword"]
+		},
+		"controller.render.double_sword_second.fpp": {
+			"geometry": "Geometry.double_sword_second",
+			"materials": [
+				{"*": "Material.spider"}
+			],
+			"part_visibility": [
+				{"rightArm": true},
+				{"leftArm": true},
+				{"head": false},
+				{"hat": false}
+			],
+			"textures": ["Texture.double_sword_second"]
+		},
+		"controller.render.mechanical_tentacle.fpp": {
+			"geometry": "Geometry.mechanical_tentacle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"part_visibility": [
+				{"rightArm": false},
+				{"leftArm": false}
+			],
+			"textures": ["Texture.mechanical_tentacle"]
+		},
+		"controller.render.scifi_tentacle.fpp": {
+			"geometry": "Geometry.scifi_tentacle",
+			"materials": [
+				{"*": "Material.default"}
+			],
+			"part_visibility": [
+				{"rightArm": false},
+				{"leftArm": false}
+			],
+			"textures": ["Texture.scifi_tentacle"]
+		}
+
+    }
+}

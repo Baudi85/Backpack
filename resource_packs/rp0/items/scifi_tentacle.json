@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mb:scifi_tentacle_item",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "scifi_tentacle_item",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

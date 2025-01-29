@@ -1,0 +1,209 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.wings": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"fly": "query.mark_variant == 3 && !q.is_on_ground"},
+				  {"fly": "query.mark_variant == 1 && !q.is_on_ground"},
+				  {"fly": "query.mark_variant == 10 && !q.is_on_ground"}
+				]
+			  },
+			  "fly": {
+				"transitions": [
+				  {"default": "1.0"}
+				],
+				"on_entry": ["/function wings_flying"]
+			  }
+			}
+		},
+		"controller.animation.mechanical_tentacle": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"attack": "query.mark_variant == 2 && v.attack_time > 0.0f"}
+				]
+			  },
+			  "attack": {
+				"transitions": [
+				  {"default": "q.all_animations_finished"}
+				],
+				"animations": ["m.attack"],
+				"on_entry": [
+					"/playsound mob.warden.sonic_charge @p[r=15]",
+					 "/playsound mob.evocation_fangs.attack @p[r=15]"
+					]
+			  }
+			}
+		},
+		"controller.animation.emiiter_setup": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"emiiter_setup": "query.mark_variant == 2"}
+				]
+			  },
+			  "emiiter_setup": {
+				"animations": ["emitter"],
+				"on_entry": [
+					"/playsound random.explode @p[r=15]"
+					]
+			  }
+			}
+		},
+		"controller.animation.scifi_tentacle": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"attack": "query.mark_variant == 6 && v.attack_time > 0.0f"}
+				]
+			  },
+			  "attack": {
+				"transitions": [
+				  {"default": "q.all_animations_finished"}
+				],
+				"animations": ["s.m_attack"]
+			  }
+			}
+		},
+		"controller.animation.dragon_backpack": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"attack": "query.mark_variant == 8 && v.attack_time > 0.0f"}
+				]
+			  },
+			  "attack": {
+				"animations": ["fireball_punch2"],
+				"transitions": [
+				  {"default": "q.all_animations_finished"}
+				]
+			  }
+			}
+		},
+		"controller.animation.fire_work": {
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"attack": "query.mark_variant == 10 && v.attack_time > 0"}
+				]
+			  },
+			  "attack": {
+				"on_entry": ["/playsound firework.blast @p[r=15]","/playsound firework.launch @p[r=15]", "/playsound firework.shoot @p[r=15]", "/camerashake add @s 0.075 0.1 rotational","/title @s actionbar - §4! Lauching a firework !§f -"], 
+				"animations": ["firework_lunch"],
+				"transitions": [
+				  {"default": "q.all_animations_finished"}
+				]
+			  }
+			}
+		},
+		"controller.animation.get_equip": {
+			"states": {
+				"default": {
+					"transitions": [
+						{"jetpack_backpack": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'jetpack_backpack_item'"},
+						{"mechanical_tentacle": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'mechanical_tentacle_item'"},
+						{"wings": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'wings_item'"},
+						{"undead": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'undead_item'"},
+						{"drone_backpack": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'drone_backpack_item'"},
+						{"scifi_tentacle": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'scifi_tentacle_item'"},
+						{"spiral": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'spiral_item'"},
+						{"dragon": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'dragon_item'"},
+						{"underwater": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'underwater_item'"},
+						{"fire_work": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'fire_work_item'"},
+						{"magic_backpack": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'magic_backpack_item'"},
+						{"turtle": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'turtle_item'"},
+						{"poison_blaster": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'poison_blaster_item'"},
+						{"double_sword": "query.is_chested && query.is_using_item && query.get_equipped_item_name == 'double_sword_item'"}
+					],
+					"on_entry": ["@s normal", "/tag @s remove mechanical_tentacle", "/tag @s remove is_monster_king", "/tag @s remove is_drone_king"]
+				},
+				"double_sword": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:double_sword_item')"}
+					],
+					"on_entry": ["/function double_sword", "@s double_sword", "/playsound armor.equip_iron @s"]
+				},
+				"jetpack_backpack": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"}
+					],
+					"on_entry": ["/function jetpack_backpack", "@s jetpack_backpack", "/playsound armor.equip_iron @s"]
+				},
+				"mechanical_tentacle": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:mechanical_tentacle_item')"}
+					],
+					"on_entry": ["/function mechanical_tentacle", "@s mechanical_tentacle", "/playsound armor.equip_iron @s", "/tag @s add mechanical_tentacle"]
+				},
+				"wings": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:wings_item')"}
+					],
+					"on_entry": ["/function wings", "@s wings", "/playsound armor.equip_iron @s"]
+				},
+				"undead": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"}
+					],
+					"on_entry": ["/function undead", "@s undead", "/playsound armor.equip_iron @s", "/tag @s add is_monster_king"]
+				},
+				"drone_backpack": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"}
+					],
+					"on_entry": ["/function drone_backpack", "@s drone_backpack", "/playsound armor.equip_iron @s", "/tag @s add is_drone_king"]
+				},
+				"scifi_tentacle": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:scifi_tentacle_item')"}
+					],
+					"on_entry": ["/function scifi_tentacle", "@s scifi_tentacle", "/playsound armor.equip_iron @s"]
+				},
+				"spiral": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:spiral_item')"}
+					],
+					"on_entry": ["/function spiral", "@s spiral", "/playsound armor.equip_iron @s"]
+				},
+				"dragon": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:dragon_item')"}
+					],
+					"on_entry": ["/function dragon", "@s dragon", "/playsound armor.equip_iron @s"]
+				},
+				"underwater": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:underwater_item')"}
+					],
+					"on_entry": ["/function underwater", "@s underwater", "/playsound armor.equip_iron @s"]
+				},
+				"fire_work": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:fire_work_item')"}
+					],
+					"on_entry": ["/function fire_work", "@s fire_work", "/playsound armor.equip_iron @s"]
+				},
+				"magic_backpack": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"}
+					],
+					"on_entry": ["/function magic_backpack", "@s magic_backpack", "/playsound armor.equip_iron @s"]
+				},
+				"turtle": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:turtle_item')"}
+					],
+					"on_entry": ["/function turtle", "@s turtle", "/playsound armor.equip_iron @s"]
+				},
+				"poison_blaster": {
+					"transitions": [
+						{"default": "!query.is_item_name_any('slot.armor.head', 0, 'mb:poison_blaster_item')"}
+					],
+					"on_entry": ["/function poison_blaster", "@s poison_blaster", "/playsound armor.equip_iron @s"]
+				}
+			}
+		}
+	}
+} 

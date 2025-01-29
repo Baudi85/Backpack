@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.spiral_setup",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "setup",
+					"pivot": [0, 11, 1]
+				},
+				{
+					"name": "dd",
+					"parent": "setup",
+					"pivot": [0, 14, 1],
+					"cubes": [
+						{"origin": [-12, 2, 1], "size": [24, 24, 0], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

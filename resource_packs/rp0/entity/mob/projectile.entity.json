@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:dirt_projectile",
+			"materials": {
+				"default": "spider"
+			},
+			"geometry": {
+				"default": "geometry.projectile"
+			},
+			"animations": {
+				"util": "animation.projectile.util"
+			},
+			"scripts": {
+				"animate": ["util"]
+			},
+			"textures": {
+				"default": "textures/entity/mob/projectile"
+			},
+			"render_controllers": ["controller.render.default"],
+			"particle_effects": {
+				"particle2": "bf:particle2"
+			},
+			"spawn_egg": {
+				"base_color": "#32dc1c",
+				"overlay_color": "#244e02"
+			}
+		}
+	}
+}

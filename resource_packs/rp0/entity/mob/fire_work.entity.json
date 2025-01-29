@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:firework",
+			"materials": {
+				"default": "spider",
+				"spider": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"geometry": {
+				"default": "geometry.firepunch",
+				"fire_work": "geometry.firepunch"
+			},
+			"animations": {
+				"util": "animation.firepunch.setup"
+			},
+			"scripts": {
+				"animate": ["util"]
+			},
+			"textures": {
+				"default": "textures/entity/fire_work",
+				"fire_work": "textures/entity/fire_work"
+			},
+			"render_controllers": ["controller.render.fire_work"],
+			"particle_effects": {
+				"a2": "hf:a2"
+			},
+			"spawn_egg": {
+				"base_color": "#dc8f1c",
+				"overlay_color": "#4e0b02"
+			}
+		}
+	}
+}

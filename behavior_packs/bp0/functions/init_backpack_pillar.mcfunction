@@ -1,0 +1,17 @@
+kill @e[type=bf:backpack_pillar, r=100]
+
+summon bf:backpack_pillar 794 107 1101 music "music"
+summon bf:backpack_pillar 785 107 1096 fire_work "fire_work"
+summon bf:backpack_pillar 767 107 1106 poison_blaster "poison_blaster"
+summon bf:backpack_pillar 785 107 1124 underwater "underwater"
+summon bf:backpack_pillar 795 107 1106 wings "wings"
+summon bf:backpack_pillar 795 107 1114 dragon "dragon"
+summon bf:backpack_pillar 772 107 1123 spiral "spiral"
+summon bf:backpack_pillar 768 107 1101 jetpack_backpack "jetpack_backpack"
+summon bf:backpack_pillar 767 107 1114 turtle "turtle"
+summon bf:backpack_pillar 777 107 1124 scifi_tentacle "scifi_tentacle"
+summon bf:backpack_pillar 790 107 1123 magic_backpack "magic_backpack"
+summon bf:backpack_pillar 794 107 1119 undead "undead"
+summon bf:backpack_pillar 790 107 1097 drone_backpack "drone_backpack"
+summon bf:backpack_pillar 768 107 1119 mechanical_tentacle "mechanical_tentacle"
+summon bf:backpack_pillar 772 107 1097 double_sword "double_sword"

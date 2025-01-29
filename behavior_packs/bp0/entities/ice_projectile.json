@@ -1,0 +1,71 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bf:icee_projectile",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_ebferimental": false,
+      "animations": {
+        "ice": "controller.animation.structure_set_smoke_1_23"
+      },
+      "scripts": {
+        "animate": ["ice"]
+      }
+    },
+    "component_groups": {
+      "bf:dirt":{
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        },
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+    },
+      "minecraft:projectile": {
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "bf:dirt",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 0.5
+          },
+          "impact_damage": {
+            "damage": [ 5, 2 ],
+            "knockback": true
+          }
+        },
+        "knockback": true,
+        "on_fire_time": 5,
+        "anchor": 1,
+        "power": 3.25,
+        "gravity": 0.03,
+        "angle_offset": 0.0,
+        "offset": [ 0, 0, 0 ]
+    },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+    }
+  },
+  "events": {
+    "bf:dirt":{
+      "add": {
+        "component_groups": ["bf:dirt"]
+      }
+    }
+  }
+}
+}

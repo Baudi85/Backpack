@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "hf:monster",
+			"materials": {
+				"default": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"textures": {
+				"default": "textures/entity/mob/4_monster"
+			},
+			"geometry": {
+				"default": "geometry.monster"
+			},
+			"animations": {
+				"walk": "animation.monster.walk",
+				"idle": "animation.monster.idle",
+				"attack": "animation.monster.attack",
+				"attack2": "animation.monster.attack2",
+				"summoned": "animation.monster.summoned",
+				"death": "animation.monster.death",
+
+				"setup": "controller.animation.monster",
+				"attacks": "controller.animation.monster.random_attack"
+			},
+			"scripts": {
+				"animate": [
+					"setup",
+					"attacks",
+
+					"summoned"// when spawned
+				]
+			},
+			"render_controllers": [
+				"controller.render.monster"
+			],
+			"spawn_egg": {
+				"base_color": "#434f51",
+				"overlay_color": "#7bd909"
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.projectile.util": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle2",
+					"locator": "test"
+				}
+			}
+		},
+		"animation.projectile.util2": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "shoot_prored",
+					"locator": "test"
+				}
+			}
+		}
+	}
+}

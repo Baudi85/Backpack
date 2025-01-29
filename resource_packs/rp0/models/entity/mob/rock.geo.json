@@ -1,0 +1,77 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.rock",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 5.5,
+				"visible_bounds_offset": [0, 2.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"locator": [0, 0, 0]
+					}
+				},
+				{
+					"name": "rocks",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rock6",
+					"parent": "rocks",
+					"pivot": [4.25, 11.5, 5.5],
+					"cubes": [
+						{"origin": [-0.75, 0, -3], "size": [10, 23, 17], "uv": [24, 100]}
+					]
+				},
+				{
+					"name": "rock5",
+					"parent": "rocks",
+					"pivot": [-3.25, 36, -0.5],
+					"cubes": [
+						{"origin": [-6.75, 0, -3], "size": [7, 72, 5], "uv": [0, 43]}
+					]
+				},
+				{
+					"name": "rock4",
+					"parent": "rocks",
+					"pivot": [1.75, 29.5, -3],
+					"cubes": [
+						{"origin": [-3.75, 0, -6], "size": [11, 59, 6], "uv": [70, 0]}
+					]
+				},
+				{
+					"name": "rock3",
+					"parent": "rocks",
+					"pivot": [5.25, 21.5, 2.5],
+					"cubes": [
+						{"origin": [-1.75, 0, -2], "size": [14, 43, 9], "uv": [70, 65]}
+					]
+				},
+				{
+					"name": "rock2",
+					"parent": "rocks",
+					"pivot": [-5.25, 15, 3.5],
+					"cubes": [
+						{"origin": [-13.75, 0, -3], "size": [17, 30, 13], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "rock",
+					"parent": "rocks",
+					"pivot": [-2.75, 22, -6.5],
+					"cubes": [
+						{"origin": [-8.75, 0, -12], "size": [12, 44, 11], "uv": [24, 43]}
+					]
+				}
+			]
+		}
+	]
+}

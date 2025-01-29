@@ -1,0 +1,29 @@
+{
+	"format_version": "1.17.0",
+	"sound_definitions": {
+		"mob.fire.thrown": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/fire_thrown"
+			]
+		},
+		"mob.fire.idle": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/fire"
+			]
+		},
+		"mob.magic.spell": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/magic_spell"
+			]
+		},
+		"mob.wing.flap": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/wing_flap"
+			]
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:fire_projectile",
+			"materials": {
+				"default": "spider"
+			},
+			"geometry": {
+				"default": "geometry.firepunch"
+			},
+			"animations": {
+				"util": "animation.firepunch.setup"
+			},
+			"scripts": {
+				"animate": ["util"]
+			},
+			"textures": {
+				"default": "textures/entity/firepunch"
+			},
+			"render_controllers": ["controller.render.default"],
+			"particle_effects": {
+				"a2": "hf:a3"
+			},
+			"spawn_egg": {
+				"base_color": "#dc8f1c",
+				"overlay_color": "#4e0b02"
+			}
+		}
+	}
+}

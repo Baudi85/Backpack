@@ -1,0 +1,77 @@
+entity.bpe:backpack_music.name=Backpack 
+item.spawn_egg.entity.bpe:backpack_music.name=Spawn Backpack
+
+
+item.mb:jetpack_backpack_item.name=Jetpack Backpack
+item.mb:mechanical_tentacle_item.name=Mechanical Tentacle Backpack
+item.mb:wings_item.name=Wings Backpack
+item.mb:undead_item.name=Undead Backpack
+item.mb:drone_backpack_item.name=Drone Backpack
+item.mb:scifi_tentacle_item.name=Sci-fi Tentacle Backpack
+item.mb:spiral_item.name=Spiral Backpack
+item.mb:dragon_item.name=Dragon Backpack
+item.mb:underwater_item.name=Underwater Backpack
+item.mb:fire_work_item.name=Fire Work Backpack
+item.mb:magic_backpack_item.name=Magic Backpack
+item.mb:music_item.name=Backpack
+item.mb:turtle_item.name=Turtle Backpack
+item.mb:poison_blaster_item.name=Poison Glaunted Backpack
+item.mb:double_sword_item.name=Double Sword
+ 
+## mobs
+item.spawn_egg.entity.hf:monster.name=Spawn Monster
+entity.hf:monster.name=Monster
+
+item.spawn_egg.entity.hf:drone.name=Spawn Drone
+entity.hf:drone.name=Drone 
+
+item.spawn_egg.entity.bf:robot.name=Spawn Robot
+entity.bf:robot.name=Robot 
+
+item.spawn_egg.entity.bf:dirt_projectile.name=Spawn Poison Splatter
+entity.bf:dirt_projectile.name=Poison Splatter 
+
+item.spawn_egg.entity.bf:fire_projectile.name=Spawn Heat Of Flames 
+entity.bf:fire_projectile.name=Heat Of Flames 
+
+item.spawn_egg.entity.bf:robot_drone.name=Spawn Robot Drone
+entity.bf:robot_drone.name=Robot Drone
+
+item.spawn_egg.entity.bf:robo_cop.name=Spawn Robot Cop
+entity.bf:robo_cop.name=Robot Cop
+
+item.spawn_egg.entity.bf:big_robot.name=Spawn Big Robot
+entity.bf:big_robot.name=Big Robot
+
+item.spawn_egg.entity.bf:robot_spider.name=Spawn Robot Spider
+entity.bf:robot_spider.name=Robot Spider
+
+item.spawn_egg.entity.bf:red_projectile.name=Spawn Lava Splatter
+entity.bf:red_projectile.name=Lava Splatter
+
+item.spawn_egg.entity.bf:backpack_pillar.name=Spawn Floating BackPacks 
+entity.bf:backpack_pillar.name=Floating BackPacks
+ 
+
+item.spawn_egg.entity.bf:rock.name=Spawn Heavy Rock
+entity.bf:rock.name=Heavy Rock
+
+item.spawn_egg.entity.bf:icee_projectile.name=Spawn Stone Cold Ice !
+entity.bf:icee_projectile.name=Stone Cold Ice !
+
+
+item.spawn_egg.entity.bf:ice_block.name=Spawn Stone Cold Ice !
+entity.bf:ice_block.name=Stone Cold Ice !
+
+## npc  
+
+dialogue.robot.name=§bBLOCKY 
+dialogue.button.robot_talk=§bTell Me More ?
+dialogue.button.robot_talk2=§bBye !
+
+## inventory
+item.spawn_egg.entity.bf:backpack_inventory.name=Backpack
+entity.bf:backpack_inventory.name=Backpack
+
+pack.name=Backpack Expansion
+pack.description=Backpack Expansion

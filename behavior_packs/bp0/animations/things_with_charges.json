@@ -1,0 +1,244 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+        "animation.mechanical_tentacle": {
+			"loop": "hold_on_last_frame",
+            "animation_length": 2.0,
+			"timeline": {
+				"0.0":[],
+				"0.5": ["/damage @e[r=5,tag=!mechanical_tentacle] 5 entity_attack","/camerashake add @s 0.4 0.2 positional", "/effect @s instant_health 1 9 true"],
+				"2.0": []
+			}
+		},
+		"animation.sneak_charge":{ // jetpack
+            "animation_length": 1.0,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/title @s actionbar §b§c[|§b|||||||]§b"],
+                "0.1":["/title @s actionbar §b§c[||§b||||||]§b"],
+                "0.2":["/title @s actionbar §b§c[|||§b|||||]§b"],
+                "0.3":["/title @s actionbar §b§c[||||§b||||]§b"],
+                "0.4":["/title @s actionbar §b§c[|||||§b|||]§b"],
+                "0.5":["/title @s actionbar §b§c[||||||§b||]§b"],
+                "0.6":["/title @s actionbar §b§c[|||||||§b|]§b"],
+                "0.7":["/title @s actionbar §b§c[||||||||§b]§b"],
+                "0.8":["/title @s actionbar §b§c[|§c|§c|§c|§c|§c|§c|§c|§c]"],
+                "0.9":["/title @s actionbar §b§c[ ! Jetpack Charged ! ]"],
+                "1.0":[]
+            }
+        },
+        "animation.player.using_charge":{ // jetpack
+            "animation_length": 9,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "1.0":["@s jetpack_charge_da", "/camerashake add @s 0.1 1.00 positional", "/effect @s levitation 1 2 true", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "1.5":["/camerashake add @s 0.2 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "2.0":["/camerashake add @s 0.3 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "2.5":["/camerashake add @s 0.4 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "3.0":["/camerashake add @s 0.5 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "3.5":["/camerashake add @s 0.6 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "4.0":["/camerashake add @s 0.7 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "4.5":["/camerashake add @s 0.8 1.00 positional", "/summon bf:knockback ^^^-1", "/playsound mob.blaze.shoot @p[r=10]"],
+                "5.0":["@s normal_da"]
+            }
+        },
+        "animation.player.cooldown":{ // jetpack
+            "animation_length": 10,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "1.0":["/title @s actionbar §r§7> 1 <§r"],
+                "2.0":["/title @s actionbar §r§7> 2 <§r"],
+                "3.0":["/title @s actionbar §r§7> 3 <§r"],
+                "4.0":["/title @s actionbar §r§7> 4 <§r"],
+                "5.0":["/title @s actionbar §r§7> 5 <§r"],
+                "6.0":["/title @s actionbar §r§7> 6 <§r"],
+                "7.0":["/title @s actionbar §r§7> 7 <§r"],
+                "8.0":["/title @s actionbar §r§7> 8 <§r"],
+                "9.0":["/title @s actionbar §r§7> 9 <§r"],
+                "10.0":["/title @s actionbar §r§7[! Cooled Down !]§r", "/playsound random.fizz @p[r=10]", "/particle minecraft:cauldron_explosion_emitter ~~1~"]
+            }
+        },
+        "animation.player.cooldown_undead":{ // undead
+            "animation_length": 10,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "1.0":["/title @s actionbar §r§7> 1 <§r"],
+                "2.0":["/title @s actionbar §r§7> 2 <§r"],
+                "3.0":["/title @s actionbar §r§7> 3 <§r"],
+                "4.0":["/title @s actionbar §r§7> 4 <§r"],
+                "5.0":["/title @s actionbar §r§7> 5 <§r"],
+                "6.0":["/title @s actionbar §r§7> 6 <§r"],
+                "7.0":["/title @s actionbar §r§7> 7 <§r"],
+                "8.0":["/title @s actionbar §r§7> 8 <§r"],
+                "9.0":["/title @s actionbar §r§7> 9 <§r"],
+                "10.0":["/title @s actionbar §r§7[! Cooled Down !]§r", "/playsound random.orb @p[r=10]"]
+            }
+        },
+        "animation.sneak_charge_undead":{ // undead
+            "animation_length": 1.0,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/title @s actionbar §a§c[|§a|||||||]§a"],
+                "0.1":["/title @s actionbar §a§c[||§a||||||]§a"],
+                "0.2":["/title @s actionbar §a§c[|||§a|||||]§a"],
+                "0.3":["/title @s actionbar §a§c[||||§a||||]§a"],
+                "0.4":["/title @s actionbar §a§c[|||||§a|||]§a"],
+                "0.5":["/title @s actionbar §a§c[||||||§a||]§a"],
+                "0.6":["/title @s actionbar §a§c[|||||||§a|]§a"],
+                "0.7":["/title @s actionbar §a§c[||||||||§a]§a"],
+                "0.8":["/title @s actionbar §a§c[|§c|§c|§c|§c|§c|§c|§c|§c]"],
+                "0.9":["/title @s actionbar §a§c[ ! Charged ! ]"],
+                "1.0":[]
+            }
+        },
+        "animation.used_undead":{ // undead
+            "animation_length": 1.0,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":[],
+                "1.0":
+                [
+                    "/playsound mob.wither.spawn @p[r=10]",
+                    "/camerashake add @p[r=10] 1.20 4.00 positional",
+                    "/summon hf:monster ^-2^^", "/particle minecraft:cauldron_explosion_emitter ^-2^^",
+                    "/summon hf:monster ^2^^", "/particle minecraft:cauldron_explosion_emitter ^2^^"
+                ]
+            }
+        },
+        "animation.sneak_charge_drone":{ // drone
+            "animation_length": 1,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/title @s actionbar §6§c[|§6|||||||]§6"],
+                "0.1":["/title @s actionbar §6§c[||§6||||||]§6"],
+                "0.2":["/title @s actionbar §6§c[|||§6|||||]§6"],
+                "0.3":["/title @s actionbar §6§c[||||§6||||]§6"],
+                "0.4":["/title @s actionbar §6§c[|||||§6|||]§6"],
+                "0.5":["/title @s actionbar §6§c[||||||§6||]§6"],
+                "0.6":["/title @s actionbar §6§c[|||||||§6|]§6"],
+                "0.7":["/title @s actionbar §6§c[||||||||§6]§6"],
+                "0.8":["/title @s actionbar §6§c[|§c|§c|§c|§c|§c|§c|§c|§c]"],
+                "0.9":["/title @s actionbar §6§c[ ! Charged ! ]"],
+                "1.0":[]
+            }
+        },
+        "animation.used_drone":{ // drone
+            "animation_length": 1.0,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":[],
+                "1.0":
+                [
+                    "@s drone_charge_da", "@s normal_da",
+                    "/playsound random.anvil_use @p[r=10]",
+                    "/camerashake add @p[r=10] 0.5 2.00 positional",
+                    "/summon hf:drone ^-2^2^", "/particle minecraft:cauldron_explosion_emitter ^-2^42^",
+                    "/summon hf:drone ^2^2^", "/particle minecraft:cauldron_explosion_emitter ^2^2^"
+                ]
+            }
+        },
+        "animation.p_p":{
+            "animation_length": 0.1,
+            "loop": true,
+            "timeline": {
+                "0.0":["/particle bf:particle2 ~~~"],
+                "0.1":["/particle bf:particle2 ~~~"]
+            }
+        },
+        "animation.fireball_punch":{
+            "animation_length": 0.7,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["@s fireball_punch"],
+                "0.7":["/playsound mob.fire.thrown @p[r=15]","/playsound mob.blaze.shoot @p[r=15]","@s fireball_pounch", "/camerashake add @s 0.075 0.1 rotational"]
+            }
+        },
+        "animation.fireball_punch2":{
+            "animation_length": 1.7,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":[],
+                "1.7":["/playsound mob.blaze.shoot @p[r=15]","@s fireball_pounch", "/camerashake add @s 0.075 0.1 rotational"]
+            }
+        },
+        "animation.scifi_tentacle":{
+            "animation_length": 0.7,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":[],
+                "0.5":["/playsound mob.evocation_fangs.attack @p[r=15]"],
+                "0.7":["/summon bf:knockback_low ^^^1", "/damage @e[type=!player,r=2] 2 entity_attack", "/camerashake add @s 0.075 0.1 rotational"]
+            }
+        },
+        "animation.thunder":{
+            "animation_length": 1.5,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/weather thunder"],
+                "1.08":["/execute @e[r=5,tag=!spiral] ~~~ summon lightning_bolt", "/summon lightning_bolt ~~~4", "/summon lightning_bolt ~~~4"],
+                "1.5":["/weather clear"]
+            }
+        },
+        "animation.fire_work_lunch":{
+            "animation_length": 1.5,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["@s firework_da"],
+                "0.9":["@s firework"],
+                "1.5":["@s normal_da"]
+            }
+        },
+        "animation.firee":{
+            "animation_length": 1.4,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/title @s actionbar - §4! using fire attack ! §r-"],
+                "0.9":["/playsound mob.fire.thrown @p[r=15]","@s fireball_pounch"],
+                "1.0":["/playsound mob.fire.thrown @p[r=15]","@s fireball_pounch"],
+                "1.4":["/playsound mob.fire.thrown @p[r=15]","@s fireball_pounch"]
+            }
+        },
+        "animation.icee":{
+            "animation_length": 0.9,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":[],
+                "0.9":["@s ice_project"]
+            }
+        },
+        "animation.emitter":{
+            "animation_length": 2.0,
+            "loop": false,
+            "timeline": {
+                "0.0":["/particle minecraft:large_explosion ~~~"],
+                "0.2":["/particle minecraft:large_explosion ~~1~","/particle minecraft:large_explosion ~~4~"],
+                "0.3":["/particle minecraft:large_explosion ~~2~","/particle minecraft:large_explosion ~~3~"]
+            }
+        },
+        "animation.earth":{
+            "animation_length": 1.5,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.0":["/camerashake add @p[r=10] 0.075 2 rotational"],
+                "1.08":["/execute @e[r=15,tag=!spiral,c=2] ~~~ summon bf:rock","/execute @e[r=15,tag=!spiral,c=2] ~~~ effect @e[r=15,tag=!spiral,c=2,type=!bf:rock] levitation 1 18 true"],
+                "1.5":[]
+            }
+        },
+        "animation.player.cooldown_drone":{ // drone
+            "animation_length": 10,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "1.0":["/title @s actionbar §r§7> 1 <§r"],
+                "2.0":["/title @s actionbar §r§7> 2 <§r"],
+                "3.0":["/title @s actionbar §r§7> 3 <§r"],
+                "4.0":["/title @s actionbar §r§7> 4 <§r"],
+                "5.0":["/title @s actionbar §r§7> 5 <§r"],
+                "6.0":["/title @s actionbar §r§7> 6 <§r"],
+                "7.0":["/title @s actionbar §r§7> 7 <§r"],
+                "8.0":["/title @s actionbar §r§7> 8 <§r"],
+                "9.0":["/title @s actionbar §r§7> 9 <§r"],
+                "10.0":["/title @s actionbar §r§7[! Cooled Down !]§r", "/playsound random.orb @p[r=10]", "/effect @s clear"]
+            }
+        }
+	}
+}

@@ -1,0 +1,285 @@
+{
+  "namespace": "horse_pocket",
+
+  //---------------------------------------------------------------------------
+  // Screens
+  //---------------------------------------------------------------------------
+
+  "horse_panel": { // strictly same as horse_screen.json but refer to pocket files
+    "type": "panel",
+    "controls": [
+      {
+        "horse_panel_regular@horse_pocket.horse_panel_regular" : {
+          // not really elegant but working
+          "visible": "(not ($container_title = $backpack_1) and not ($container_title = $backpack_2) and not ($container_title = $backpack_3) and not ($container_title = $backpack_4) and not ($container_title = $backpack_5) and not ($container_title = $backpack_6) and not ($container_title = $backpack_7) and not ($container_title = $backpack_8) and not ($container_title = $backpack_9) and not ($container_title = $backpack_10) and not ($container_title = $backpack_11) and not ($container_title = $backpack_12) and not ($container_title = $backpack_13) and not ($container_title = $backpack_14) and not ($container_title = $backpack_15))"
+        }
+      },
+      {
+        "backpack_1@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/1",
+          "$craft": "textures/ui/custom/craft/1",
+          "$icon": "textures/ui/custom/icon/1",
+    
+          "visible": "($container_title = $backpack_1)"
+        }
+      },
+      {
+        "backpack_2@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/2",
+          "$craft": "textures/ui/custom/craft/2",
+          "$icon": "textures/ui/custom/icon/2",
+    
+          "visible": "($container_title = $backpack_2)"
+        }
+      },
+      {
+        "backpack_3@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/3",
+          "$craft": "textures/ui/custom/craft/3",
+          "$icon": "textures/ui/custom/icon/3",
+    
+          "visible": "($container_title = $backpack_3)"
+        }
+      },
+      {
+        "backpack_4@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/4",
+          "$craft": "textures/ui/custom/craft/4",
+          "$icon": "textures/ui/custom/icon/4",
+    
+          "visible": "($container_title = $backpack_4)"
+        }
+      },
+      {
+        "backpack_5@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/5",
+          "$craft": "textures/ui/custom/craft/5",
+          "$icon": "textures/ui/custom/icon/5",
+    
+          "visible": "($container_title = $backpack_5)"
+        }
+      },
+      {
+        "backpack_6@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/6",
+          "$craft": "textures/ui/custom/craft/6",
+          "$icon": "textures/ui/custom/icon/6",
+    
+          "visible": "($container_title = $backpack_6)"
+        }
+      },
+      {
+        "backpack_7@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/7",
+          "$craft": "textures/ui/custom/craft/7",
+          "$icon": "textures/ui/custom/icon/7",
+    
+          "visible": "($container_title = $backpack_7)"
+        }
+      },
+      {
+        "backpack_8@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/8",
+          "$craft": "textures/ui/custom/craft/8",
+          "$icon": "textures/ui/custom/icon/8",
+    
+          "visible": "($container_title = $backpack_8)"
+        }
+      },
+      {
+        "backpack_9@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/9",
+          "$craft": "textures/ui/custom/craft/9",
+          "$icon": "textures/ui/custom/icon/9",
+    
+          "visible": "($container_title = $backpack_9)"
+        }
+      },
+      {
+        "backpack_10@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/10",
+          "$craft": "textures/ui/custom/craft/10",
+          "$icon": "textures/ui/custom/icon/10",
+    
+          "visible": "($container_title = $backpack_10)"
+        }
+      },
+      {
+        "backpack_11@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/11",
+          "$craft": "textures/ui/custom/craft/11",
+          "$icon": "textures/ui/custom/icon/11",
+    
+          "visible": "($container_title = $backpack_11)"
+        }
+      },
+      {
+        "backpack_12@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/12",
+          "$craft": "textures/ui/custom/craft/12",
+          "$icon": "textures/ui/custom/icon/12",
+    
+          "visible": "($container_title = $backpack_12)"
+        }
+      },
+      {
+        "backpack_13@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/13",
+          "$craft": "textures/ui/custom/craft/13",
+          "$icon": "textures/ui/custom/icon/13",
+    
+          "visible": "($container_title = $backpack_13)"
+        }
+      },
+      {
+        "backpack_14@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/14",
+          "$craft": "textures/ui/custom/craft/14",
+          "$icon": "textures/ui/custom/icon/14",
+    
+          "visible": "($container_title = $backpack_14)"
+        }
+      },
+      {
+        "backpack_15@backpack_pocket.main_panel" : {
+          "$description": "textures/ui/custom/item_detail/15",
+          "$craft": "textures/ui/custom/craft/15",
+          "$icon": "textures/ui/custom/icon/15",
+    
+          "visible": "($container_title = $backpack_15)"
+        }
+      },
+      {
+        "switch_b@backpack_pocket.button": {
+          "visible": "( ($container_title = $backpack_1) or ($container_title = $backpack_2) or ($container_title = $backpack_3) or ($container_title = $backpack_4) or ($container_title = $backpack_5) or ($container_title = $backpack_6) or ($container_title = $backpack_7) or ($container_title = $backpack_8) or ($container_title = $backpack_9) or ($container_title = $backpack_10) or ($container_title = $backpack_11) or ($container_title = $backpack_12) or ($container_title = $backpack_13) or ($container_title = $backpack_14) or ($container_title = $backpack_15) )"
+        }
+      }
+    ]
+  },
+
+  "horse_panel_regular": { // ORIGINAL, DO NOT MODIFY
+    "type": "panel",
+    "controls": [
+      {
+        "gamepad_helpers@common.container_gamepad_helpers": {
+          "size": [ "90%-4px", 26 ],
+          "offset": [ "2%+4px", -6 ]
+        }
+      },
+      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+      { "gamepad_cursor@common.gamepad_cursor_button": {} },
+      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "item_lock_notification_factory@common.item_lock_notification_factory": {
+          "$offset": [ 0, "85%" ]
+        }
+      },
+      {
+        "base_panel": {
+          "type": "panel",
+          "size": [ "100%-8px", "100%-4px" ],
+          "controls": [
+            {
+              "root_panel@common.root_panel": {
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "size": [ "100% - 29px", "100%" ]
+              }
+            },
+            {
+              "hold_icon@common.inventory_take_progress_icon_button": { }
+            },
+            {
+              "bg@common.common_panel": {
+                "size": [ "100% - 29px", "100%" ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "layer": 1,
+
+                "$dialog_background": "dialog_background_opaque",
+                "$show_close_button": false
+              }
+            },
+            { "interactive_tabs@horse_pocket.interactive_tabs": {} },
+            {
+              "close_button@horse_pocket.close_button": {
+                "focus_enabled": false,
+                "offset": [ 7, 4 ],
+                "layer": 5
+              }
+            },
+            {
+              "inventory@horse_pocket.half_screen_inventory": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 30, 0 ],
+                "$container_size": 36,
+                "$pane_collection": "combined_hotbar_and_inventory_items"
+              }
+            },
+            {
+              "equipment@horse_pocket.equip_middle_screen": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 15, 0 ],
+                "layer": 1
+              }
+            },
+            {
+              "chest_tab": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "visible": false,
+                "controls": [
+                  { "visual_tabs_chest@horse_pocket.visual_tabs_chest": {} },
+                  {
+                    "chest@horse_pocket.half_screen_chest": {
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right",
+                      "$container_size": "$chest_size",
+                      "$pane_collection": "container_items"
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "chest_tab_interactive",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "renderer_tab": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  { "visual_tabs_equip@horse_pocket.visual_tabs_equip": {} },
+                  {
+                    "renderer@horse_pocket.half_screen_renderer": {
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle"
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "renderer_tab_interactive",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

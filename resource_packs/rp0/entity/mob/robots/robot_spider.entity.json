@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:robot_spider",
+			"materials": {
+				"default": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"textures": {
+				"default": "textures/entity/mob/robot_spider"
+			},
+			"geometry": {
+				"default": "geometry.robot_spider"
+			},
+			"animations": {
+				"walk": "animation.robot_spider.walk",
+				"climb": "animation.robot_spider.walk2",
+				"idle": "animation.robot_spider.idle",
+				"attack": "animation.robot_spider.attack",
+
+				"setup": "controller.animation.mobs2"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#cfcfcf",
+				"overlay_color": "#1ad6e0"
+			}
+		}
+	}
+}

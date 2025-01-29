@@ -1,0 +1,735 @@
+{
+  "format_version": "1.18.20",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "animations": {
+        "get_equip": "controller.animation.get_equip",
+        "wings_flying": "controller.animation.wings",
+
+        "mechanical_tentacle.attack": "controller.animation.mechanical_tentacle",
+        "m.attack": "animation.mechanical_tentacle",
+
+        "jetpack": "controller.animation.jetpack_backpack_sneak",
+        "jetpack_charge": "animation.sneak_charge",
+        "jetpack_using": "animation.player.using_charge",
+        "jet_pack_cooldown": "animation.player.cooldown",
+
+        "sneak_charge_undead": "animation.sneak_charge_undead",
+        "cooldown_undead": "animation.player.cooldown_undead",
+        "used_undead": "animation.used_undead",
+        "undead": "controller.animation.undead",
+
+        "drone_charge": "animation.sneak_charge_drone",
+        "drone_used": "animation.used_drone",
+        "drone_cooldown": "animation.player.cooldown_drone",
+        "drone": "controller.animation.drone",
+
+        "underwater": "controller.animation.underwater.status_effects",
+
+        "poison_blaster_shoot": "controller.animation.poison_blaster",
+
+        "spiral": "controller.animation.spiral",
+
+        "dragon_backpack": "controller.animation.dragon_backpack",
+
+        "fireball_punch": "animation.fireball_punch",
+        "fireball_punch2": "animation.fireball_punch2",
+        
+        "magic_backpack": "controller.animation.magic_backpack",
+
+        "s.m_attack": "animation.scifi_tentacle",
+        "scifi_tentacle": "controller.animation.scifi_tentacle",
+
+        "thunder": "animation.thunder",
+        "earth": "animation.earth",
+        
+        "firework_lunch": "animation.fire_work_lunch",
+        "fiework_setup": "controller.animation.fire_work",
+
+        "turtle": "controller.animation.turtle.status_effects",
+
+        "double_sword": "controller.animation.double_sword",
+        "icee": "animation.icee",
+        "firee": "animation.firee",
+        "dropping": "controller.animation.dropping",
+        "doublesword2": "controller.animation.double_sword2"
+      },
+      "scripts": {
+        "animate": [
+          "get_equip",
+          "wings_flying",
+          "doublesword2",
+
+          "dropping",
+          {
+            "double_sword": "q.mark_variant == 15"
+          },
+
+          "scifi_tentacle",
+
+          "fiework_setup",
+
+          "icee",
+          
+          "turtle",
+
+          "mechanical_tentacle.attack",
+          
+          "jetpack",
+
+          "undead",
+
+          "drone",
+
+          "underwater",
+
+          "poison_blaster_shoot",
+
+          "spiral",
+
+          "dragon_backpack",
+
+          "magic_backpack"
+        ]
+      }
+    },
+    
+
+    "component_groups": {
+      "11_green":{
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "11_red":{
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "11_purple":{
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      // spiral fire
+      "fireball_punch":{
+        "minecraft:variant": {
+          "value": 10
+        }
+      },
+      "thunder":{
+        "minecraft:variant": {
+          "value": 20
+        }
+      },
+      "earth":{
+        "minecraft:variant": {
+          "value": 30
+        }
+      },
+      "normal_v":{
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      //double sword
+      "second_fire_change":{
+        "minecraft:variant": {
+          "value": 40
+        }
+      },
+
+
+
+
+      "poison_project": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "bf:dirt_projectile",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "ice_project": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "bf:icee_projectile",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "fireball": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "minecraft:fireball",
+            "num_to_spawn": 5,
+            "single_use": true
+          }
+        }
+      },
+      "fireball_pounch": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "bf:fire_projectile",
+            "num_to_spawn": 5,
+            "single_use": true
+          }
+        }
+      },
+      "firework": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "bf:firework",
+            "num_to_spawn": 2,
+            "single_use": true
+          }
+        }
+      },
+      //backpacks
+      "normal":{
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "jetpack_backpack":{
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "mechanical_tentacle":{
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "wings":{
+        "minecraft:mark_variant": {
+          "value": 3
+        }
+      },
+      "undead":{
+        "minecraft:mark_variant": {
+          "value": 4
+        }
+      },
+      "drone_backpack":{
+        "minecraft:mark_variant": {
+          "value": 5
+        }
+      },
+      "scifi_tentacle":{
+        "minecraft:mark_variant": {
+          "value": 6
+        }
+      },
+      "spiral":{
+        "minecraft:mark_variant": {
+          "value": 7
+        }
+      },
+      "dragon":{
+        "minecraft:mark_variant": {
+          "value": 8
+        }
+      },
+      "underwater":{
+        "minecraft:mark_variant": {
+          "value": 9
+        }
+      },
+      "fire_work":{
+        "minecraft:mark_variant": {
+          "value": 10
+        }
+      },
+      "magic_backpack":{
+        "minecraft:mark_variant": {
+          "value": 11
+        }
+      },
+      "music":{
+        "minecraft:mark_variant": {
+          "value": 12
+        }
+      },
+      "turtle":{
+        "minecraft:mark_variant": {
+          "value": 13
+        }
+      },
+      "poison_blaster":{
+        "minecraft:mark_variant": {
+          "value": 14
+        }
+      },
+      "double_sword":{
+        "minecraft:mark_variant": {
+          "value": 15
+        }
+      },
+
+
+      // dummy animations
+      "normal_da":{
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "jetpack_charge_da":{
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "drone_charge_da":{
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "firework_da":{
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+
+
+
+
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "visible": false,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_chested": {},
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": [ "player","staff" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": {
+        "heal": 6,
+        "jump": 0.05,
+        "sprint_jump": 0.2,
+        "mine": 0.005,
+        "attack": 0.1,
+        "damage": 0.1,
+        "walk": 0.0,
+        "sprint": 0.01,
+        "swim": 0.01
+      },
+      "minecraft:player.saturation": {
+        "value": 5,
+         "max": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 20
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame", "backpack"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:trigger_raid"
+        }
+      }
+    },
+
+    "events": {
+      //crates^
+      "normal":{
+        "add": {
+          "component_groups": [ "normal"]
+        }
+      },
+      "jetpack_backpack":{
+        "add": {
+          "component_groups": [ "jetpack_backpack"]
+        }
+      },
+      "mechanical_tentacle":{
+        "add": {
+          "component_groups": [ "mechanical_tentacle"]
+        }
+      },
+      "wings":{
+        "add": {
+          "component_groups": [ "wings"]
+        }
+      },
+      "undead":{
+        "add": {
+          "component_groups": [ "undead"]
+        }
+      },
+      "drone_backpack":{
+        "add": {
+          "component_groups": [ "drone_backpack"]
+        }
+      },
+      "scifi_tentacle":{
+        "add": {
+          "component_groups": [ "scifi_tentacle"]
+        }
+      },
+      "spiral":{
+        "add": {
+          "component_groups": [ "spiral"]
+        }
+      },
+      "dragon":{
+        "add": {
+          "component_groups": [ "dragon"]
+        }
+      },
+      "underwater":{
+        "add": {
+          "component_groups": [ "underwater"]
+        }
+      },
+      "fire_work":{
+        "add": {
+          "component_groups": [ "fire_work"]
+        }
+      },
+      "magic_backpack":{
+        "add": {
+          "component_groups": [ "magic_backpack"]
+        }
+      },
+      "music":{
+        "add": {
+          "component_groups": [ "music"]
+        }
+      },
+      "turtle":{
+        "add": {
+          "component_groups": [ "turtle"]
+        }
+      },
+
+      // dummy animations
+      "jetpack_charge_da":{
+        "add": {
+          "component_groups": ["jetpack_charge_da"]
+        }
+      },
+      "drone_charge_da":{
+        "add": {
+          "component_groups": ["drone_charge_da"]
+        }
+      },
+      "normal_da":{
+        "add": {
+          "component_groups": ["normal_da"]
+        }
+      },
+      "firework_da":{
+        "add": {
+          "component_groups": ["firework_da"]
+        }
+      },
+
+
+      "11_green":{
+        "add": {
+          "component_groups": ["11_green"]
+        }
+      },
+
+      
+      "poison_blaster":{
+        "add": {
+          "component_groups": ["poison_blaster"]
+        }
+      },
+      "double_sword":{
+        "add": {
+          "component_groups": ["double_sword"]
+        }
+      },
+      "poison_project":{
+        "add": {
+          "component_groups": ["poison_project"]
+        }
+      },
+      "ice_project":{
+        "add": {
+          "component_groups": ["ice_project"]
+        }
+      },
+
+      "11_red":{
+        "add": {
+          "component_groups": ["11_red"]
+        }
+      },
+      "11_purple":{
+        "add": {
+          "component_groups": ["11_purple"]
+        }
+      },
+
+      "fireball_punch":{
+        "add": {
+          "component_groups": ["fireball_punch"]
+        }
+      },
+      "fireball":{
+        "add": {
+          "component_groups": ["fireball"]
+        }
+      },
+      "fireball_pounch":{
+        "add": {
+          "component_groups": ["fireball_pounch"]
+        }
+      },
+      "thunder":{
+        "add": {
+          "component_groups": ["thunder"]
+        }
+      },
+      "earth":{
+        "add": {
+          "component_groups": ["earth"]
+        }
+      },
+      "firework":{
+        "add": {
+          "component_groups": ["firework"]
+        }
+      },
+      "second_fire_change":{
+        "add": {
+          "component_groups": ["second_fire_change"]
+        }
+      },
+      "normal_v":{
+        "add": {
+          "component_groups": ["normal_v"]
+        }
+      },
+      //removers
+      "remove_second_fire_change":{
+        "add": {
+          "component_groups": [
+            "normal_v"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "second_fire_change"
+          ]
+        }
+      },
+      "remove_fp":{
+        "add": {
+          "component_groups": [
+            "normal_v"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "fireball_pounch"
+          ]
+        }
+      },
+      "remove_thunder":{
+        "add": {
+          "component_groups": [
+            "normal_v"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "thunder"
+          ]
+        }
+      },
+      "remove_earth":{
+        "add": {
+          "component_groups": [
+            "normal_v"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "earth"
+          ]
+        }
+      },
+
+
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      }
+    }
+  }
+}
+
+
+
+

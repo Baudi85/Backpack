@@ -1,0 +1,46 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          { "add_rider_to_items": "q.is_sheared" }
+        ]
+      },
+      "animations": {
+        "add_rider_to_items": "animation.add_rider_to_item"
+      }
+    },
+    "component_groups": {
+      "hf:check_item_entity":{
+        "minecraft:is_sheared":{}
+      }
+    },
+    "components":{
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [ "staff" ],
+        "seats": {
+          "position": [ 0, 0, 0]
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": { "test": "is_family", "subject": "other", "value": "player" },
+            "add": {
+              "component_groups": [ "hf:check_item_entity" ]
+            }
+          }
+        ]
+      },
+      "hf:remove_check_item_entity":{ "remove": { "component_groups": [ "hf:check_item_entity" ] } }
+    }
+  }
+}

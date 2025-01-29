@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:robot",
+			"materials": {
+				"default": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/mob/normal"
+			},
+			"geometry": {
+				"default": "geometry.robot"
+			},
+			"animations": {
+				"idle": "animation.robot.idle",
+				"jump": "animation.robot.jump",
+				"setup": "controller.animation.npc"
+			},
+			"scripts": {
+				"animate": [
+					"setup"
+				]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#f1ebcc",
+				"overlay_color": "#31bce0"
+			}
+		}
+	}
+}

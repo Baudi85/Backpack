@@ -1,0 +1,226 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.poison_blaster.third_person": {
+			"loop": true,
+			"bones": {
+				"bone2": {
+					"position": [0, 0, 1]
+				},
+				"rightArm": {
+					"rotation": [-90, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-88.04447, 4.2812, 0.42611]
+				},
+				"blasterthing": {
+					"position": [0.5, 0, 0]
+				},
+				"backpack": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				}
+			}
+		},
+		"animation.poison_blaster.first_person": {
+			"loop": true,
+			"bones": {
+				"bone2": {
+					"position": [0, 0, 1]
+				},
+				"rightArm": {
+					"rotation": [-90, -7.5, 0],
+					"position": [-4, 0, -7]
+				},
+				"leftArm": {
+					"rotation": [-90.34898, -1.68887, -3.02243],
+					"position": [2, -2, -10]
+				},
+				"blasterthing": {
+					"position": [0.5, 0, 0]
+				},
+				"backpack": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"root": {
+					"rotation": [0, -180, 0]
+				}
+			}
+		},
+		"animation.poison_blaster.third_person_shoot": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5417,
+			"anim_time_update": "q.anim_time + q.delta_time *2",
+			"bones": {
+				"bone2": {
+					"position": [0, 0, 1]
+				},
+				"bone3": {
+					"rotation": {
+						"0.2083": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [-90, 0, 0],
+						"0.125": {
+							"pre": [-112.5, 0, 0],
+							"post": [-112.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [-133, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [-90, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"post": [-91.77886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [-111.77886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [-137.51886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": {
+							"post": [-91.77886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"blasterthing": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3333": {
+							"pre": [-15, 0, 0],
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [-5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0.5, 0, 0],
+						"0.1667": {
+							"pre": [0.5, 0, 2],
+							"post": [0.5, 0, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [0, 0, 0]
+					}
+				},
+				"backpack": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle1",
+					"locator": "shoot"
+				}
+			}
+		},
+		"animation.poison_blaster.first_person_shoot": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5417,
+			"anim_time_update": "q.anim_time + q.delta_time *2",
+			"bones": {
+				"bone2": {
+					"position": [0, 0, 1]
+				},
+				"bone3": {
+					"rotation": {
+						"0.1667": {
+							"pre": [0, 0, 0],
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [-90, 0, 0],
+						"0.0833": {
+							"pre": [-112.5, 0, 0],
+							"post": [-112.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-133, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [-90, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [-90, 0, 0],
+						"0.0833": {
+							"pre": [-111.77886, -3.68698, 3.7401],
+							"post": [-111.77886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1667": {
+							"post": [-137.51886, -3.68698, 3.7401],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [-90, 0, 0]
+					}
+				},
+				"blasterthing": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3333": {
+							"pre": [-15, 0, 0],
+							"post": [-15, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [-5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0.5, 0, 0],
+						"0.1667": {
+							"pre": [0.5, 0, 2],
+							"post": [0.5, 0, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [0, 0, 0]
+					}
+				},
+				"backpack": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"root": {
+					"rotation": [0, -180, 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle1",
+					"locator": "shoot"
+				}
+			}
+		}
+	}
+}

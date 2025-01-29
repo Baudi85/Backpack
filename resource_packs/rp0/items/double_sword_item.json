@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mb:double_sword_item",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "double_sword_item",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

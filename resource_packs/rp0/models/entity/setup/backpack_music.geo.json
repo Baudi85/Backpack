@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.backpack_music_setup",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "setup",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "backbling",
+					"parent": "setup",
+					"pivot": [-1, 0, 3],
+					"cubes": [
+						{"origin": [-7, 12, -3], "size": [14, 6, 6], "uv": [0, 21]},
+						{"origin": [-5, -1, -5], "size": [10, 13, 8], "uv": [0, 0]},
+						{"origin": [5, 0, -10], "size": [4, 9, 9], "pivot": [9, 9.75, -5.5], "rotation": [35, 0, 0], "uv": [31, 24]},
+						{"origin": [7, 9, -8.5], "size": [0, 12, 6], "pivot": [9, 9.75, -5.5], "rotation": [35, 0, 0], "uv": [22, 40]},
+						{"origin": [1, 8, -5.25], "size": [4, 9, 0], "uv": [36, 0]},
+						{"origin": [-7, 0, -3], "size": [2, 6, 5], "uv": [10, 33]}
+					]
+				},
+				{
+					"name": "bb_main",
+					"parent": "backbling",
+					"pivot": [0, 0, 4],
+					"cubes": [
+						{"origin": [7.5, 13, -18], "size": [0, 13, 13], "uv": [38, 38]}
+					]
+				}
+			]
+		}
+	]
+}

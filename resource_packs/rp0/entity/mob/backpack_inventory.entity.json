@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:backpack_inventory",
+			"materials": {
+				"default": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"geometry": {
+				"default": "geometry.backpack_musidc_entity"
+			},
+			"textures": {
+				"default": "textures/entity/backpack_music"
+			},
+			"animations": {
+				"scale_rider": "animation.backpack_musidc_entity.scaled"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"scale_rider": "q.is_riding"
+					}
+				]
+			},
+			"render_controllers": ["controller.render.music2"],
+			"spawn_egg": {
+				"texture": "music_item",
+				"texture_index": 0
+			}
+		}
+	}
+}

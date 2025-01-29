@@ -1,0 +1,78 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bf:backpack_pillar",
+			"materials": {
+				"default": "spider",
+				"spider": "spider",
+				"custom_animated": "custom_animated"
+			},
+			"textures": {
+				"default": "textures/entity/poison_blaster",
+				"music": "textures/entity/backpack_music",
+				"dragon": "textures/entity/dragon",
+				"droneBackpack": "textures/entity/droneBackpack",
+				"fire_work": "textures/entity/fire_work",
+				"jetpack_backpack": "textures/entity/jetpack_backpack",
+				"magic_backpack": "textures/entity/magic_backpack",
+				"mechanical_tentacle": "textures/entity/mechanical_tentacle",
+				"poison_blaster": "textures/entity/poison_blaster",
+				"scifi_tentacle": "textures/entity/scifi_tentacle",
+				"spiral": "textures/entity/spiral",
+				"turtle": "textures/entity/turtles",
+				"undead": "textures/entity/undead",
+				"underwater": "textures/entity/underwater_backpack",
+				"wings": "textures/entity/wings",
+				"red": "textures/entity/11_red",
+				"purple": "textures/entity/11_purple",
+				"double_sword": "textures/entity/double_sword"
+			},
+			"geometry": {
+				"default": "geometry.poison_blaster_setup",
+				"music": "geometry.backpack_music_setup",
+				"dragon": "geometry.dragon_setup",
+				"droneBackpack": "geometry.droneBackpack_setup",
+				"fire_work": "geometry.fire_work_setup",
+				"jetpack_backpack": "geometry.jetpack_backpack_setup",
+				"magic_backpack": "geometry.magic_backpack_setup",
+				"mechanical_tentacle": "geometry.mechanical_tentacle_setup",
+				"poison_blaster": "geometry.poison_blaster_setup",
+				"scifi_tentacle": "geometry.scifi_tentacle_setup",
+				"spiral": "geometry.spiral_setup",
+				"turtle": "geometry.turtle_setup",
+				"undead": "geometry.undead_setup",
+				"underwater": "geometry.underwater_setup",
+				"wings": "geometry.wings_setup",
+				"double_swordsaaa": "geometry.double_swordsaaa"
+			},
+			"animations": {
+				"util": "animation.setup.util"
+			},
+			"scripts": {
+				"animate": ["util"]
+			},
+			"render_controllers": [
+				{"controller.render.jetpack_backpack": "q.mark_variant == 1"},
+				{"controller.render.mechanical_tentacle": "q.mark_variant == 2"},
+				{"controller.render.wings": "q.mark_variant == 3"},
+				{"controller.render.undead": "q.mark_variant == 4"},
+				{"controller.render.droneBackpack": "q.mark_variant == 5"},
+				{"controller.render.scifi_tentacle": "q.mark_variant == 6"},
+				{"controller.render.spiral": "q.mark_variant == 7"},
+				{"controller.render.dragon_backpack": "q.mark_variant == 8"},
+				{"controller.render.underwater": "q.mark_variant == 9"},
+				{"controller.render.fire_work": "q.mark_variant == 10"},
+				{"controller.render.magic_backpack": "q.mark_variant == 11"},
+				{"controller.render.music": "q.mark_variant == 12"},
+				{"controller.render.turtles": "q.mark_variant == 100"},
+				{"controller.render.poison_blaster": "q.mark_variant == 14"},
+				{"controller.render.double_swordsaaa": "q.mark_variant == 15"}
+			],
+			"spawn_egg": {
+				"base_color": "#dc6e1c",
+				"overlay_color": "#7c9394"
+			}
+		}
+	}
+}

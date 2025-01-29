@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:double_sword"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "# L",
+            "D D",
+            "   "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:redstone"
+            },
+            "L": {
+                "item": "minecraft:lapis_lazuli"
+            },
+            "D": {
+                "item": "minecraft:diamond_sword"
+            }
+        },
+        "result": {
+            "item": "mb:double_sword_item"
+        }
+    }
+}

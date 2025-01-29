@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mb:mechanical_tentacle_item",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "mechanical_tentacle",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

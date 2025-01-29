@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:magic"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "   ",
+            " # ",
+            " T "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:golden_apple"
+            },
+            "T": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:magic_backpack_item"
+        }
+    }
+}

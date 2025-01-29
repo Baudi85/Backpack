@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:jetpack"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " i ",
+            " D ",
+            " T "
+        ],
+        "key": {
+            "i": {
+                "item": "minecraft:iron_ingot"
+            },
+            "D": {
+                "item": "minecraft:diamond"
+            },
+            "T": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:jetpack_backpack_item"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mb:drone_backpack_item",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "drone_backpack_item",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

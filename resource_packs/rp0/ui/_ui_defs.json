@@ -1,0 +1,7 @@
+{
+  // Alphabetical order please :)
+  "ui_defs": [
+    "ui/backpack.json",
+    "ui/backpack_pocket.json"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mb:fire_work_item",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "fire_work_item",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:drone_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "#",
+            "C"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:iron_helmet"
+            },
+            "C": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:drone_backpack_item",
+            "count": 1
+        }
+    }
+}

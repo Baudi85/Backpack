@@ -1,0 +1,35 @@
+{
+  "$backpack_1": "music",
+  "$backpack_2": "fire_work",
+  "$backpack_3": "poison_blaster",
+  "$backpack_4": "underwater",
+  "$backpack_5": "wings",
+  "$backpack_6": "dragon",
+  "$backpack_7": "spiral",
+  "$backpack_8": "jetpack_backpack",
+  "$backpack_9": "turtle",
+  "$backpack_10": "scifi_tentacle",
+  "$backpack_11": "magic_backpack",
+  "$backpack_12": "undead",
+  "$backpack_13": "drone_backpack",
+  "$backpack_14": "mechanical_tentacle",
+  "$backpack_15": "double_sword",
+
+  "$backpack_names": [
+    "music",
+    "fire_work",
+    "poison_blaster",
+    "underwater",
+    "wings",
+    "dragon",
+    "spiral",
+    "jetpack_backpack",
+    "turtle",
+    "scifi_tentacle",
+    "magic_backpack",
+    "undead",
+    "drone_backpack",
+    "mechanical_tentacle",
+    "double_sword"
+  ]
+}

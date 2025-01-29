@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.no_look": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"relative_to": {
+						"rotation": "entity"
+					},
+					"rotation": ["-query.target_x_rotation", "-query.target_y_rotation", 0]
+				}
+			}
+		},
+		"animation.jetpack_backpack.charged": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [90, 0, 0],
+					"position": ["math.sin(q.anim_time *100000000000) *1", "11+math.cos(q.anim_time *100000000000) *1", 14]
+				},
+				"rightArm": {
+					"rotation": [-180, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-180, 0, 0]
+				}
+			}
+		},
+		"animation.player.particle": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "dust_jetpack1",
+						"locator": "locator"
+					},
+					{
+						"effect": "dust_jetpack2",
+						"locator": "locator2"
+					}
+				]
+			}
+		}
+	}
+}

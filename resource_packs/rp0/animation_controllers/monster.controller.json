@@ -1,0 +1,171 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.monster.random_attack": {
+			"initial_state": "default",
+			"states": {
+			  "default": {
+				"transitions": [
+				  {"play_random_animations": "v.attack_time > 0.0f"}
+				]
+			  },
+			  "play_random_animations": {
+				"on_entry": ["variable.random_chance = math.random_integer(1.0, 2.0);"],
+				"animations": [
+				  {"attack": "variable.random_chance == 1.0"},
+				  {"attack2": "variable.random_chance == 2.0"}
+				],
+				"transitions": [
+				  {"default": "query.any_animation_finished"}
+				]
+			  }
+			}
+		},
+		"controller.animation.mobs": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"attack": "q.is_delayed_attacking"},
+						{"walk": "query.modified_move_speed>0.01"}
+					],
+					"blend_transition": 0.2
+				},
+				"walk": {
+					"animations": ["walk"],
+					"transitions": [
+                        {"attack": "q.is_delayed_attacking"},
+						{"idle": "query.modified_move_speed<=0.01"}
+					],
+					"blend_transition": 0.2
+				},
+                "attack": {
+					"animations": ["attack"],
+					"transitions": [
+						{"idle": "q.all_animations_finished&&!q.is_delayed_attacking"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.npc": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"jump": "q.mark_variant == 100"},
+						{"walk": "query.modified_move_speed>0.01"}
+					]
+				},
+				"walk": {
+					"animations": ["idle"],
+					"transitions": [
+                        {"jump": "q.mark_variant == 100"},
+						{"idle": "query.modified_move_speed<=0.01"}
+					]
+
+				},
+                "jump": {
+					"animations": ["jump"],
+					"transitions": [
+						{"idle": "q.all_animations_finished&&q.mark_variant != 100"}
+					]
+				}
+			}
+		},
+		"controller.animation.mobs3": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"attack": "v.attack_time > 0.5f"},
+						{"walk": "query.modified_move_speed>0.01"}
+					],
+					"blend_transition": 0.2
+				},
+				"walk": {
+					"animations": ["walk"],
+					"transitions": [
+                        {"attack": "v.attack_time > 0.5f"},
+						{"idle": "query.modified_move_speed<=0.01"}
+					],
+					"blend_transition": 0.2
+				},
+                "attack": {
+					"animations": ["attack"],
+					"transitions": [
+						{"idle": "q.all_animations_finished"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.mobs2": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"attack": "q.is_delayed_attacking"},
+						{"climb": "q.is_wall_climbing"},
+						{"walk": "query.modified_move_speed>0.01"}
+					],
+					"blend_transition": 0.2
+				},
+				"walk": {
+					"animations": ["walk"],
+					"transitions": [
+                        {"attack": "q.is_delayed_attacking"},
+						{"climb": "q.is_wall_climbing"},
+						{"idle": "query.modified_move_speed<=0.01"}
+					],
+					"blend_transition": 0.2
+				},
+                "attack": {
+					"animations": ["attack"],
+					"transitions": [
+						{"idle": "q.all_animations_finished&&!q.is_delayed_attacking"}
+					],
+					"blend_transition": 0.2
+				},
+				"climb": {
+					"animations": ["climb"],
+					"transitions": [
+						{"idle": "q.all_animations_finished&&!q.is_wall_climbing"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.monster": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"walk": "query.modified_move_speed>0.01"},
+						{"death": "q.mark_variant == 1"}
+					],
+					"blend_transition": 0.2
+				},
+				"walk": {
+					"animations": ["walk"],
+					"transitions": [
+						{"death": "q.mark_variant == 1"},
+						{"idle": "query.modified_move_speed<=0.01"}
+					],
+					"blend_transition": 0.2
+				},
+				"death": {
+					"animations": ["death"],
+					"transitions": [ 
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

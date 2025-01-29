@@ -1,0 +1,312 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "materials": {
+        "default": "entity_alphatest",
+        "cape": "entity_alphatest",
+        "animated": "player_animated",
+        "spider": "spider",
+        "custom_animated": "custom_animated"
+      },
+      "textures": {
+        "default": "textures/entity/steve",
+        "cape": "textures/entity/cape_invisible",
+        // backpacks
+        "jetpack_backpack": "textures/entity/jetpack_backpack",
+        "mechanical_tentacle": "textures/entity/mechanical_tentacle",
+        "wings": "textures/entity/wings",
+        "undead": "textures/entity/undead",
+        "droneBackpack": "textures/entity/droneBackpack",
+        "scifi_tentacle": "textures/entity/scifi_tentacle",
+        "spiral": "textures/entity/spiral",
+        "dragon": "textures/entity/dragon",
+        "underwater": "textures/entity/underwater_backpack",
+        "fire_work": "textures/entity/fire_work",
+        "magic_backpack": "textures/entity/magic_backpack",
+        "music": "textures/entity/backpack_music",
+        "turtle": "textures/entity/turtles",
+        "poison_blaster": "textures/entity/poison_blaster",
+        "red": "textures/entity/11_red",
+        "purple": "textures/entity/11_purple",
+        "double_sword": "textures/entity/double_sword",
+        "double_sword_second": "textures/entity/double_sword"
+      },
+      "geometry": {
+        "default": "geometry.humanoid.custom",
+        "cape": "geometry.cape",
+        // backpacks
+        "jetpack_backpack": "geometry.jetpack_backpack",
+        "mechanical_tentacle": "geometry.mechanical_tentacle",
+        "wings": "geometry.wings",
+        "undead": "geometry.undead",
+        "droneBackpack": "geometry.droneBackpack",
+        "scifi_tentacle": "geometry.scifi_tentacle",
+        "spiral": "geometry.spiral",
+        "dragon": "geometry.dragon",
+        "underwater": "geometry.underwater",
+        "fire_work": "geometry.fire_work",
+        "magic_backpack": "geometry.magic_backpack",
+        "music": "geometry.backpack_musidc",
+        "turtle": "geometry.turtlae",
+        "poison_blaster": "geometry.poison_blaster",
+        "red": "geometry.spiral",
+        "purple": "geometry.spiral",
+        "double_sword": "geometry.double_sword",
+        "double_sword_second": "geometry.double_sword_second"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "initialize": [
+          "variable.is_holding_right = 0.0;",
+          "variable.is_blinking = 0.0;",
+          "variable.last_blink_time = 0.0;",
+          "variable.hand_bob = 0.0;"
+        ],
+        "pre_animation": [
+          "variable.helmet_layer_visible = 1.0;",
+          "variable.leg_layer_visible = 1.0;",
+          "variable.boot_layer_visible = 1.0;",
+          "variable.chest_layer_visible = 1.0;",
+          "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+          "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+          "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+
+          "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+          "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+          "v.mechanical_tentacle = q.mark_variant == 2;",
+          "v.poison_blaster = q.mark_variant == 14;",
+          "v.spiral = q.mark_variant == 7;",
+          "v.scifi_tentacle = q.mark_variant == 6;",
+          "v.double_sword = q.mark_variant == 15;",
+          "v.turtle = q.mark_variant == 13;",
+
+          "v.backpacks = (v.mechanical_tentacle || v.poison_blaster || v.spiral || v.scifi_tentacle || v.double_sword || v.turtle);"
+        ],
+        "animate": [
+          {
+            "root": "!v.backpacks || !v.is_first_person"
+          },
+          "wings",
+          "undead",
+          "jetpack",
+          "drone",
+          "dragon_backpack",
+          "fire_work",
+          {
+            "scifi_tentacle": "v.scifi_tentacle"
+          },
+          {
+            "poison_blaster": "v.poison_blaster"
+          },
+          {
+            "mechanical_tentacle": "v.mechanical_tentacle"
+          },
+          {
+            "spiral": "v.spiral"
+          },
+          {
+            "double_sword_setup": "v.double_sword"
+          },
+          {
+            "turtle_setup": "v.turtle"
+          }
+        ]
+      },
+      "animations": {
+        // backpacks
+        "turtle_fpp": "animation.turtlae.fpp",
+        "turtle_hold": "animation.turtlae.hold",
+        "turtle_fpp2": "animation.turtlae.fpp2",
+        "turtle_hold2": "animation.turtlae.hold2",
+        "turtle_setup": "controller.animation.turtle",
+
+
+
+
+
+        "mechanical_tentacle": "controller.animation.mechanical_tentacle",
+        "m.attack": "animation.mechanical_tentacle.attack",
+        "m.idle": "animation.mechanical_tentacle.idle",
+
+        "mt.attack_fpp": "animation.mechanical_tentacle.attack_fpp",
+        "mt.fpp": "animation.mechanical_tentacle.idle_fpp",
+
+
+        "double_sword_setup": "controller.animation.double_sword",
+        "double_sword_idle": "animation.double_sword.attack.tpp_idle",
+        "double_sword_idle_fpp": "animation.double_sword.attack.fpp_idle",
+        "double_sword.attack.fpp": "animation.double_sword.attack.fpp",
+        "double_sword.attack.tpp": "animation.double_sword.attack.tpp",
+        //2s
+        "double_sword_idle2": "animation.double_sword.attack.tpp_idle2",
+        "double_sword_idle_fpp2": "animation.double_sword.attack.fpp_idle2",
+        "double_sword.attack.fpp2": "animation.double_sword.attack.fpp2",
+        "double_sword.attack.tpp2": "animation.double_sword.attack.tpp2",
+
+
+        "wings": "controller.animation.wings",
+        "wing_idle": "animation.wing.flap_idle",
+        "wings_flap": "animation.wing.flap_const",
+        "wings_sound": "animation.wing.sound",
+
+        "undead.idle": "animation.undead.idle",
+        "undead.summon": "animation.undead.summon",
+        "undead": "controller.animation.undead",
+
+        "jetpack": "controller.animation.jetpack",
+        "no_look": "animation.player.no_look",
+        "jetpack_backpack_charged": "animation.jetpack_backpack.charged",
+
+        "drone": "controller.animation.drone",
+        "drone_deploy": "animation.droneBackpack.deploy",
+
+        "spiral": "controller.animation.spiral",
+        "spiral_idle": "animation.spiral.levitating",
+
+        "spiral_fireball_punch.tpp": "animation.fire_punch.third",
+        "spiral_fireball_punch.fpp": "animation.fire_punch.first",
+
+        "spiral_thunder.tpp": "animation.lightning_summon.third",
+        "spiral_thunder.fpp": "animation.lightning_summon.first",
+
+        "spiral_earth_summon.tpp": "animation.earth_summon.summon_rock_third",
+        "spiral_earth_summon.fpp": "animation.earth_summon.summon_rock_first",
+
+        "dragon": "controller.animation.dragon",
+        "dragon_idle": "animation.dragon.idle",
+
+        "fire_work.idle": "animation.fire_work.idle",
+        "fire_work.shoot": "animation.fire_work.shoot",
+        "fire_work": "controller.animation.fire_work",
+
+        "poison_blaster.tpp": "animation.poison_blaster.third_person",
+        "poison_blaster.fpp": "animation.poison_blaster.first_person",
+        "poison_blaster": "controller.animation.poison_blaster",
+        "p.fs": "animation.poison_blaster.first_person_shoot",
+        "poison_blaster.shoot": "animation.poison_blaster.third_person_shoot",
+
+
+        "dragon_backpack": "controller.animation.dragon_backpack",
+
+        "dragon.fpp_attack": "animation.fire_breath.first_attack",
+        "dragon.tpp_attack": "animation.fire_breath.third_attack",
+
+
+        "scifi_tentacle": "controller.animation.scifi_tentacle",
+        "scifi_tentacle.attack": "animation.scifi_tentacle.attack",
+        "scifi_tentacle.attack.fpp": "animation.scifi_tentacle.attack_fpp",
+        "scifi_tentacle.idle.fpp": "animation.scifi_tentacle.idle_fpp",
+        "scifi_tentacle.idle": "animation.scifi_tentacle.idle",
+        
+
+
+        "root": "controller.animation.player.root",
+        "base_controller": "controller.animation.player.base",
+        "hudplayer": "controller.animation.player.hudplayer",
+        "humanoid_base_pose": "animation.humanoid.base_pose",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "look_at_target_ui": "animation.player.look_at_target.ui",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "look_at_target_inverted": "animation.player.look_at_target.inverted",
+        "cape": "animation.player.cape",
+        "move.arms": "animation.player.move.arms",
+        "move.legs": "animation.player.move.legs",
+        "swimming": "animation.player.swim",
+        "swimming.legs": "animation.player.swim.legs",
+        "riding.arms": "animation.player.riding.arms",
+        "riding.legs": "animation.player.riding.legs",
+        "holding": "animation.player.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "holding_spyglass": "animation.humanoid.holding_spyglass",
+        "charging": "animation.humanoid.charging",
+        "attack.positions": "animation.player.attack.positions",
+        "attack.rotations": "animation.player.attack.rotations",
+        "sneaking": "animation.player.sneaking",
+        "bob": "animation.player.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "skeleton_attack": "animation.skeleton.attack",
+        "sleeping": "animation.player.sleeping",
+        "first_person_base_pose": "animation.player.first_person.base_pose",
+        "first_person_empty_hand": "animation.player.first_person.empty_hand",
+        "first_person_swap_item": "animation.player.first_person.swap_item",
+        "first_person_shield_block": "animation.player.first_person.shield_block",
+        "first_person_attack_controller": "controller.animation.player.first_person_attack",
+        "first_person_attack_rotation": "animation.player.first_person.attack_rotation",
+        "first_person_vr_attack_rotation": "animation.player.first_person.vr_attack_rotation",
+        "first_person_walk": "animation.player.first_person.walk",
+        "first_person_map_controller": "controller.animation.player.first_person_map",
+        "first_person_map_hold": "animation.player.first_person.map_hold",
+        "first_person_map_hold_attack": "animation.player.first_person.map_hold_attack",
+        "first_person_map_hold_off_hand": "animation.player.first_person.map_hold_off_hand",
+        "first_person_map_hold_main_hand": "animation.player.first_person.map_hold_main_hand",
+        "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
+        "third_person_crossbow_equipped": "animation.player.crossbow_equipped",
+        "third_person_bow_equipped": "animation.player.bow_equipped",
+        "crossbow_hold": "animation.player.crossbow_hold",
+        "crossbow_controller": "controller.animation.player.crossbow",
+        "shield_block_main_hand": "animation.player.shield_block_main_hand",
+        "shield_block_off_hand": "animation.player.shield_block_off_hand",
+        "blink": "controller.animation.persona.blink",
+		    "tooting_goat_horn": "animation.humanoid.tooting_goat_horn"
+      },
+      "render_controllers": [
+        { "controller.render.player.first_person": "variable.is_first_person" },
+        { "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon" },
+        { "controller.render.player.map": "variable.map_face_icon" },
+        //backpacks
+        {"controller.render.jetpack_backpack": "q.mark_variant == 1 && !variable.is_first_person"},
+
+        {"controller.render.mechanical_tentacle": "q.mark_variant == 2 && !variable.is_first_person"},
+        {"controller.render.mechanical_tentacle.fpp": "q.mark_variant == 2 && variable.is_first_person"},
+
+        {"controller.render.wings": "q.mark_variant == 3 && !variable.is_first_person"},
+        {"controller.render.undead": "q.mark_variant == 4 && !variable.is_first_person"},
+        {"controller.render.droneBackpack": "q.mark_variant == 5 && !variable.is_first_person"},
+        {"controller.render.scifi_tentacle": "q.mark_variant == 6 && !variable.is_first_person"},
+
+        {"controller.render.spiral": "q.mark_variant == 7 && !variable.is_first_person"},
+
+        {"controller.render.double_sword_second": "q.variant == 40 && !variable.is_first_person"},
+        {"controller.render.double_sword_second.fpp": "q.variant == 40 && variable.is_first_person"},
+
+        {"controller.render.dragon_backpack": "q.mark_variant == 8 && !variable.is_first_person"},
+        {"controller.render.underwater": "q.mark_variant == 9 && !variable.is_first_person"},
+        {"controller.render.fire_work": "q.mark_variant == 10 && !variable.is_first_person"},
+        {"controller.render.magic_backpack": "q.mark_variant == 11 && !variable.is_first_person"},
+        {"controller.render.music": "q.mark_variant == 12 && !variable.is_first_person"},
+        {"controller.render.turtles": "q.mark_variant == 13 && !variable.is_first_person"},
+        {"controller.render.turtle.fpp": "q.mark_variant == 13 && variable.is_first_person"},
+        
+        {"controller.render.poison_blaster": "q.mark_variant == 14 && !variable.is_first_person"},
+        {"controller.render.double_sword": "q.mark_variant == 15  && !variable.is_first_person"},
+        {"controller.render.poison_blaster.fpp": "q.mark_variant == 14 && variable.is_first_person"},
+        {"controller.render.spiral.fpp": "q.mark_variant == 7 && variable.is_first_person"},
+        {"controller.render.scifi_tentacle.fpp": "q.mark_variant == 6 && variable.is_first_person"},
+        {"controller.render.double_sword.fpp": "q.mark_variant == 15 && variable.is_first_person"}
+      ],
+      "enable_attachables": true,
+      "particle_effects": {
+        "particle1": "bf:particle1",
+        "f": "hf:f",
+        "p": "hf:p",
+        "a4": "hf:a4",
+        "a2": "hf:a2",
+        "a3": "hf:a3",
+        "weapon_switch": "bf:weapon_switch.1",
+
+        "dust_jetpack1": "hf:dust2",
+        "dust_jetpack2": "hf:dust2"
+      },
+      "sound_effects": {
+        "wing_flap": "mob.wing.flap"
+      }
+    }
+  }
+}

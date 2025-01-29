@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jump_npc":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [ {"set": "q.mark_variant == 100"}]
+                },
+                "set":{
+                    "on_entry": [ "@s jump", "/dialogue open @e[type=bf:robot] @p[r=5]"],
+                    "transitions": [ {"default": "q.mark_variant != 100"} ]
+                }
+            }
+        },
+        "controller.animation.change_name":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [ {"set": "q.is_alive"}]
+                },
+                "set":{
+                    "on_entry": [ "/dialogue change @e[type=bf:robot] robot"]
+                }
+            }
+        }
+    }
+}

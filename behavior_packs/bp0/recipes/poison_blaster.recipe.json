@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bf:poison_blaster"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " # ",
+            " P ",
+            " T "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:bow"
+            },
+            "P": {
+                "item": "minecraft:poisonous_potato"
+            },
+            "T": {
+                "item": "minecraft:chest"
+            }
+        },
+        "result": {
+            "item": "mb:poison_blaster_item"
+        }
+    }
+}

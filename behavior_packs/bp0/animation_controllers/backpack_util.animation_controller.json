@@ -1,0 +1,208 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jetpack_backpack_sneak": {
+            "initial_state": "default",
+            "states": {
+              "default": {
+                "transitions": [
+                  { "sneaking": "q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"}
+                ]
+              },
+              "sneaking": {
+                "animations": ["jetpack_charge"], 
+                "transitions": [
+                  {"default": "!q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"},
+                  {"finished": "(q.all_animations_finished) && q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"}
+                ]
+              },
+              "finished":{
+                "animations": ["jetpack_using"], 
+                "transitions": [
+                  {"cooldown": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"}
+                ]
+              },
+              "cooldown":{
+                "animations": ["jet_pack_cooldown"],
+                "transitions": [
+                  {"default": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:jetpack_backpack_item')"}
+                ]
+              }
+            }
+          },
+          "controller.animation.undead": { // undead
+            "initial_state": "default",
+            "states": {
+              "default": {
+                "transitions": [
+                  { "sneaking": "q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"}
+                ]
+              },
+              "sneaking": {
+                "animations": ["sneak_charge_undead"], 
+                "transitions": [
+                  {"default": "!q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"},
+                  {"finished": "(q.all_animations_finished) && q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"}
+                ]
+              },
+              "finished":{
+                "animations": ["used_undead"], 
+                "transitions": [
+                  {"cooldown": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"}
+                ]
+              },
+              "cooldown":{
+                "animations": ["cooldown_undead"],
+                "transitions": [
+                  {"default": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:undead_item')"}
+                ]
+              }
+            }
+          },
+          "controller.animation.drone": { // drone
+            "initial_state": "default",
+            "states": {
+              "default": {
+                "transitions": [
+                  { "sneaking": "q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"}
+                ]
+              },
+              "sneaking": {
+                "animations": ["drone_charge"], 
+                "transitions": [
+                  {"default": "!q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"},
+                  {"finished": "(q.all_animations_finished) && q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"}
+                ]
+              },
+              "finished":{
+                "animations": ["drone_used"], 
+                "transitions": [
+                  {"cooldown": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"}
+                ]
+              },
+              "cooldown":{
+                "animations": ["drone_cooldown"],
+                "transitions": [
+                  {"default": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:drone_backpack_item')"}
+                ]
+              }
+            }
+          },
+          "controller.animation.magic_backpack": { // magic
+          "initial_state": "default",
+          "states": {
+            "default": {
+              "on_entry": ["/effect @s clear"], 
+              "transitions": [
+                { "sneaking": "q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"}
+              ]
+            },
+            "sneaking": {
+              "on_entry": [
+                "/effect @s health_boost 20 15",
+                "/effect @s haste 20 15",
+                "/effect @s strength 20 15",
+                "/effect @s speed 10 15",
+                "/particle minecraft:totem_manual ~~~",
+                "/particle minecraft:totem_particle ~~~",
+                "/playsound random.totem @p[r=15]",
+                "/camerashake add @s 0.075 0.1 rotational",
+                "/playsound mob.magic.spell @p[r=15]",
+                "/title @s actionbar - §ayou have gained effects §r-"
+              ],
+              "transitions": [
+                {"default": "!q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"},
+                {"finished": "(q.all_animations_finished) && q.is_sneaking && query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"}
+              ]
+            },
+            "finished":{
+              "transitions": [
+                {"cooldown": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"}
+              ]
+            },
+            "cooldown":{
+              "animations": ["drone_cooldown"],
+              "transitions": [
+                {"default": "q.all_animations_finished && query.is_item_name_any('slot.armor.head', 0, 'mb:magic_backpack_item')"}
+              ]
+            }
+          }
+        },
+          "controller.animation.underwater.status_effects":{
+            "initial_state": "default",
+            "states": {
+              "default":{
+                "transitions": [
+                  { "on_hold": "q.mark_variant == 9" },
+                  { "on_hold2": "q.mark_variant == 9 && q.is_in_water" }
+                ],
+                "on_entry": [
+                  "/effect @s conduit_power 0",
+                  "/effect @s water_breathing 0",
+                  "/effect @s speed 0",
+                  "/effect @s night_vision 0"
+                ]
+              },
+              "on_hold": {
+                "transitions": [
+                  { "on_hold_tick": "q.mark_variant == 9" },
+                  { "default": "q.mark_variant != 9" }
+                ],
+                "on_entry": [
+                  "/effect @s conduit_power 10 4 true",
+                  "/effect @s water_breathing 10 4 true"
+                ]
+              },
+              "on_hold2": {
+                "transitions": [
+                  { "on_hold_tick": "q.mark_variant == 9 && q.is_in_water" },
+                  { "default": "q.mark_variant != 9 && !q.is_in_water" }
+                ],
+                "on_entry": [
+                  "/effect @s speed 10 4 true",
+                  "/effect @s  night_vision 10 4 true"
+                ]
+              },
+              "on_hold_tick": {
+                "transitions": 
+                [ 
+                  { "on_hold": "1" } ,
+                  { "on_hold2": "1" }
+                ]
+              }
+            }
+          },
+          "controller.animation.turtle.status_effects":{
+            "initial_state": "default",
+            "states": {
+              "default":{
+                "transitions": [
+                  { "on_hold": "q.mark_variant == 13" }
+                ],
+                "on_entry": [
+                  "/effect @s strength 0",
+                  "/effect @s speed 0",
+                  "/effect @s resistance 0"
+                ]
+              },
+              "on_hold": {
+                "transitions": [
+                  { "on_hold_tick": "q.mark_variant == 13" },
+                  { "default": "q.mark_variant != 13" }
+                ],
+                "on_entry": [
+                  "/effect @s strength 10 4 true",
+                  "/effect @s speed 10 4 true",
+                  "/effect @s resistance 10 4 true"
+                ]
+              },
+              "on_hold_tick": {
+                "transitions": 
+                [ 
+                  { "on_hold": "1" } 
+                ]
+              }
+            }
+          }
+      }
+}

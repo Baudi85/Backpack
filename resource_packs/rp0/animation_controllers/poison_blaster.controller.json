@@ -1,0 +1,319 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+		"controller.animation.poison_blaster": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person": {
+                    "animations": [ "poison_blaster.fpp" ],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+				    "animations": ["p.fs"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": [ "poison_blaster.tpp"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["poison_blaster.shoot"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        },
+        "controller.animation.mechanical_tentacle": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person": {
+                    "animations": ["mt.fpp"],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+				    "animations": ["mt.attack_fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": [ "m.idle"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["m.attack"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        },
+        "controller.animation.scifi_tentacle": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person": {
+                    "animations": ["scifi_tentacle.idle.fpp"],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+				    "animations": ["scifi_tentacle.attack.fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": ["scifi_tentacle.idle"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["scifi_tentacle.attack"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        },
+        "controller.animation.turtle": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person": {
+                    "animations": ["turtle_fpp"],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+				    "animations": ["turtle_fpp2"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": ["turtle_hold"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["turtle_hold2"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        },
+        "controller.animation.double_sword": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" },
+                        { "first_person2": "variable.is_first_person && q.variant == 40" },
+                        { "third_person2": "!variable.is_first_person && q.variant == 40" }
+                    ]
+                },
+                "first_person": {
+                    "animations": ["double_sword_idle_fpp"],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        {"attack_first2": "variable.attack_time > 0.0f && q.variant == 40"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person2": {
+                    "animations": ["double_sword_idle_fpp2"],
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f"},
+                        {"attack_first2": "variable.attack_time > 0.0f && q.variant == 40"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+				    "animations": ["double_sword.attack.fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                //2s
+                "attack_first2": {
+				    "animations": ["double_sword.attack.fpp2"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": ["double_sword_idle"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"},
+                        {"attack_third2": "variable.attack_time > 0.0f && q.variant == 40"}
+                    ]
+                },
+                "third_person2": {
+                    "animations": ["double_sword_idle2"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f"},
+                        {"attack_third2": "variable.attack_time > 0.0f && q.variant == 40"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["double_sword.attack.tpp"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				},
+                "attack_third2": {
+				    "animations": ["double_sword.attack.tpp2"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        },
+        "controller.animation.spiral": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "first_person": "variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "first_person": {
+                    "transitions": [
+                        {"attack_first": "variable.attack_time > 0.0f && q.variant == 10"},
+                        {"attack_first.thunder": "variable.attack_time > 0.0f && q.variant == 20"},
+                        {"attack_first.earth": "variable.attack_time > 0.0f && q.variant == 30"},
+                        { "default": "!variable.is_first_person" },
+                        { "third_person": "!variable.is_first_person" }
+                    ]
+                },
+                "attack_first": {
+                    "animations": ["spiral_earth_summon.fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"first_person": "q.all_animations_finished"} 
+					]
+				},
+                "attack_first.thunder": {
+				    "animations": ["spiral_thunder.fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				},
+                "attack_first.earth": {
+				    "animations": ["spiral_thunder.fpp"],
+					"transitions":[ 
+                        { "default": "!variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				},
+                "third_person": {
+                    "animations": ["spiral_idle"],
+                    "transitions": [
+                        { "default": "variable.is_first_person" },
+                        { "first_person": "variable.is_first_person" },
+                        {"attack_third": "variable.attack_time > 0.0f && q.variant == 10"},
+                        {"attack_third.thunder": "variable.attack_time > 0.0f && q.variant == 20"},
+                        {"attack_third.earth": "variable.attack_time > 0.0f && q.variant == 30"}
+                    ]
+                },
+                "attack_third": {
+				    "animations": ["spiral_fireball_punch.tpp"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				},
+                "attack_third.thunder": {
+				    "animations": ["spiral_thunder.tpp"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				},
+                "attack_third.earth": {
+				    "animations": ["spiral_earth_summon.tpp"],
+					"transitions":[ 
+                        { "default": "variable.is_first_person" },
+						{"third_person": "q.all_animations_finished"} 
+					]
+				}
+            }
+        }
+    }
+}
